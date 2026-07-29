@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Paimún Construcciones | Excelencia en Arquitectura Llave en Mano</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Inter:wght@400;500;700&family=Jetbrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="tailwind.config.js"></script>
+<link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary/30 overflow-x-hidden overflow-y-hidden">
+
+<!-- Curtain Reveal -->
+<div id="curtain-left" style="position:fixed;top:0;left:0;width:50%;height:100%;background:#ffffff;z-index:9998;transition:transform 0.8s cubic-bezier(0.76,0,0.24,1);">
+</div>
+<div id="curtain-right" style="position:fixed;top:0;right:0;width:50%;height:100%;background:#ffffff;z-index:9998;transition:transform 0.8s cubic-bezier(0.76,0,0.24,1);">
+</div>
+
+<div class="hidden md:block" id="cursor-dot"></div>
+<div class="hidden md:block" id="cursor-ring"></div>
+
+<div class="modal-backdrop" id="project-modal-backdrop" onclick="closeModal()"></div>
+<div class="modal-content rounded-[40px] shadow-2xl" id="project-modal">
+<div class="p-8 md:p-12">
+<div class="flex justify-end mb-6">
+<button class="text-primary hover:text-secondary transition-colors magnetic" onclick="closeModal()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-4">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden bg-surface-container cursor-zoom-in transition-transform duration-300" id="modal-main-image" style="will-change:transform;" onclick="showZoom(this.querySelector('img').src)" onmousedown="this.style.transform='scale(1.03)'" onmouseup="this.style.transform='scale(1)'" onmouseleave="this.style.transform='scale(1)'">
+<img alt="" class="w-full h-full object-cover">
+</div>
+<div class="grid grid-cols-3 gap-4" id="modal-gallery"></div>
+</div>
+<div class="space-y-8 flex flex-col justify-center">
+<div>
+<h2 class="font-display text-4xl md:text-5xl text-primary" id="modal-title">Casa del Bosque</h2>
+<p class="font-label text-xs text-secondary mt-2 uppercase tracking-widest" id="modal-category-label">Entregados</p>
+</div>
+<div class="space-y-4">
+<h3 class="font-label text-[10px] text-primary uppercase tracking-[0.2em] opacity-60">Descripción del Proyecto</h3>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed" id="modal-description">Residencia de alta gama con enfoque en sostenibilidad y materiales nobles. Superficie: 450m2. Ubicación: Zona Norte.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 border-t border-primary/10 pt-8">
+<div>
+<div class="font-label text-[10px] text-secondary uppercase tracking-widest mb-1">Año</div>
+<div class="font-headline text-lg text-primary" id="modal-year">2024</div>
+</div>
+<div>
+<div class="font-label text-[10px] text-secondary uppercase tracking-widest mb-1">Estilo</div>
+<div class="font-headline text-lg text-primary" id="modal-style">Minimalismo Arquitectónico</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-label text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-95 btn-shimmer magnetic w-full">
+Solicitar Dossier Técnico
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-4 md:px-0 floating-nav">
+<div class="flex items-center justify-between gap-4 p-2 bg-white/40 backdrop-blur-20px glass-border rounded-full shadow-primary/10 transition-all duration-700 hover:shadow-primary/20 magnetic py-2">
+<div class="flex items-center gap-8 pl-6">
+<a class="flex items-center transition-transform hover:scale-105" href="#hero">
+<img alt="Paimún Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSC4qDhZ6eHEC-bp1BTPq4DhAdodf5yA55NVp2wM6XWIgGhrMECjIn_EsriuH1S5UYFl_GOu13KbfE7tasq4mr-aKFj2pv7lE2WP1UjoIHnnXNxuHtqNWMYdDgEO4X8LH0G_EW74wAOtZuDD-7Xdoke10xaYR8sJx05xTbAHIt_Sa_lbzW6xedProUh1qLbIom5kKFH1u9pHjGjeV07DQaCeGXTv9Mbe317dXNY_ztKOUEI7Ukwx2Gha9_8bjPd_eeDLfK5YzQs4">
+</a>
+<div class="hidden sm:flex gap-6 items-center border-l border-primary/10 pl-8">
+<a class="font-label text-[10px] uppercase tracking-widest text-primary hover:text-secondary transition-all" href="#nosotros">Nosotros</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-primary hover:text-secondary transition-all" href="#metodo">Método</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-primary hover:text-secondary transition-all" href="#proyectos">Proyectos</a>
+</div>
+</div>
+<a href="https://wa.me/543471537155?text=Hola%2C%20me%20interesa%20consultar%20sobre%20un%20proyecto" target="_blank" class="bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest px-8 py-3 rounded-full hover:opacity-90 transition-all active:scale-95 btn-shimmer magnetic mr-2 no-underline">
+Consultar
+</a>
+</div>
+</header>
+
+<main class="relative">
+
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="hero">
+<div class="absolute inset-0 z-0" id="hero-bg">
+<img alt="Hero Architectural View" class="w-full h-full object-cover brightness-[0.85] scale-110 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCgcouK77QV-vyRIyblLH7G9iCCdYTvpnWtdqxMrWWORDtsihjBJ0ncN7EsQCEsW5rF4ldd5_Cf5dDk6RK4WZhlSCD-y-srLUkOcn01uusUVsCKq8Qg1VcAeSJtBuUa065kDRziDBfWykn4lo9XkYeF9igWzoX9cYh4BKWDm8RQrkaIwX1vcztyvl5zQJ2_46sr5vCgD4_cuhXorAiPMDI4ZSYe_GlXBjKHz8jmHiCnLguUChooNvh00WFHZK_2r8lCLR-prAisPA">
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 items-center">
+<div class="md:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 glass-border bg-white/20 backdrop-blur-md rounded-full shadow-lg shadow-primary/5 transition-all duration-500 hover:bg-white/40 hover:shadow-xl hover:scale-105 hover:tracking-[0.2em] cursor-default">
+<span class="font-label text-[10px] tracking-widest text-primary font-bold uppercase transition-all duration-500">Construcción llave en mano</span>
+</div>
+<h1 class="font-display text-4xl sm:text-5xl md:text-7xl text-primary leading-tight">Diseñamos el hogar<br><span class="text-secondary">que imaginas</span></h1>
+<p class="font-body text-lg text-on-surface-variant max-w-xl">Nos encargamos desde el diseño arquitectónico hasta la entrega final. Tu único trabajo es disfrutarlo.</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a href="#proyectos" class="bg-primary text-on-primary px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-label text-xs sm:text-sm uppercase tracking-widest flex items-center justify-center gap-3 group transition-all hover:scale-[1.02] active:scale-95 btn-shimmer magnetic w-full sm:w-auto">
+Explorar Proyectos
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+<a href="https://wa.me/543471537155?text=Hola%2C%20me%20interesa%20consultar%20sobre%20un%20proyecto" target="_blank" class="glass-border bg-white/40 backdrop-blur-md text-primary px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-label text-xs sm:text-sm uppercase tracking-widest hover:bg-white/60 transition-all active:scale-95 magnetic text-center w-full sm:w-auto">Contactanos</a>
+</div>
+</div>
+<div class="hidden md:flex md:col-span-5 justify-end">
+<div class="glass-border bg-white/10 backdrop-blur-xl p-8 rounded-3xl w-full max-w-xs space-y-6 shadow-2xl hover:bg-white/20 transition-all duration-700 magnetic">
+<div class="space-y-1">
+<span class="text-primary font-label text-[10px] uppercase tracking-widest">PROYECTOS ENTREGADOS</span>
+<div class="text-4xl font-display text-primary">30+</div>
+</div>
+<div class="architectural-line opacity-20"></div>
+<div class="space-y-1">
+<span class="text-primary font-label text-[10px] uppercase tracking-widest">AÑOS DE EXPERIENCIA</span>
+<div class="text-4xl font-display text-primary">8</div>
+</div>
+<div class="architectural-line opacity-20"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 md:py-32 bg-white overflow-hidden" id="nosotros">
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="reveal space-y-4">
+<h2 class="font-label text-sm text-secondary font-bold uppercase tracking-widest">Sobre nosotros</h2>
+<h3 class="font-display text-4xl md:text-6xl text-primary leading-tight">Quiénes somos</h3>
+</div>
+<p class="reveal font-body text-lg text-on-surface-variant leading-relaxed">Paimún es una empresa constructora especializada en proyectos "llave en mano", enfocada en gestionar todo el proceso de obra: desde el diseño y la planificación hasta la entrega final lista para habitar. Nuestra propuesta apunta a simplificarle la vida al cliente, centralizando todo en un solo equipo y evitando los problemas típicos de coordinación en construcción.</p>
+<p class="reveal font-body text-lg text-on-surface-variant leading-relaxed">Nuestra filosofía se centra en la excelencia técnica y la paz mental absoluta del propietario. Gestionamos la complejidad para que usted solo disfrute del resultado.</p>
+<div class="reveal pt-4">
+<div class="flex items-center gap-4 group">
+<div class="h-[1px] w-12 bg-secondary group-hover:w-20 transition-all duration-700"></div>
+<span class="font-label text-[10px] text-primary tracking-widest uppercase">Excelencia y tranquilidad</span>
+</div>
+</div>
+</div>
+<div class="relative reveal">
+<div class="aspect-square rounded-[40px] overflow-hidden shadow-2xl group project-img-container">
+<img alt="Oficina Paimún Construcciones" class="w-full h-full object-cover" src="paimun-oficina.jpg?v=2">
+</div>
+<div class="absolute -bottom-8 -left-8 glass-border bg-white/30 backdrop-blur-xl p-8 rounded-3xl shadow-2xl hidden md:block hover:-translate-y-2 transition-all duration-700 magnetic">
+<div class="text-secondary font-display text-4xl leading-none font-semibold">100%</div>
+<div class="font-label text-[10px] text-primary/90 mt-2 uppercase tracking-widest font-medium">Compromiso con la Calidad</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="relative py-16 md:py-32 overflow-hidden" id="metodo">
+<!-- Background image -->
+<div class="absolute inset-0 z-0">
+<img alt="Arquitectura moderna" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80">
+<div class="absolute inset-0 bg-primary/80 backdrop-blur-sm"></div>
+</div>
+
+<div class="relative z-10 max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<!-- Header -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 items-end reveal">
+<div>
+<h2 class="font-label text-sm text-secondary font-bold uppercase tracking-[0.3em]">Nuestro Proceso</h2>
+<h3 class="font-display text-4xl md:text-6xl text-white mt-4 leading-tight">Así trabajamos<br><span class="text-secondary">en Paimún</span></h3>
+</div>
+<div class="lg:border-l lg:border-white/20 lg:pl-8">
+<p class="font-body text-lg text-white/70 leading-relaxed">Un proceso claro y transparente para que tu proyecto avance sin complicaciones, de principio a fin.</p>
+</div>
+</div>
+
+<!-- Accordion -->
+<div class="max-w-3xl space-y-4 reveal" id="method-accordion">
+<div class="method-accordion-item glass-border bg-white/10 backdrop-blur-20px rounded-2xl transition-all duration-700" data-index="0">
+<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(0)">
+<span class="font-display text-4xl md:text-5xl text-secondary font-bold">01</span>
+<div class="border-l-2 border-secondary pl-6 flex-1">
+<h4 class="font-headline text-lg md:text-xl text-white">Diseño y planificación</h4>
+</div>
+<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 method-toggle">
+<span class="font-body text-white text-xl leading-none method-toggle-icon">+</span>
+</div>
+</button>
+<div class="method-accordion-body px-5 md:px-7 pb-6" style="height: 0; max-height: 0; opacity: 0; overflow: hidden;">
+<p class="font-body text-[15px] text-white/70 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Definimos la idea del proyecto, sus necesidades y objetivos. En esta etapa se desarrollan los planos, renders y toda la planificación necesaria para que cada decisión tenga claridad antes de empezar la obra.</p>
+</div>
+</div>
+
+<div class="method-accordion-item glass-border bg-white/10 backdrop-blur-20px rounded-2xl transition-all duration-700" data-index="1">
+<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(1)">
+<span class="font-display text-4xl md:text-5xl text-secondary font-bold">02</span>
+<div class="border-l-2 border-secondary pl-6 flex-1">
+<h4 class="font-headline text-lg md:text-xl text-white">Gestión integral</h4>
+</div>
+<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 method-toggle">
+<span class="font-body text-white text-xl leading-none method-toggle-icon">+</span>
+</div>
+</button>
+<div class="method-accordion-body px-5 md:px-7 pb-6" style="max-height: 0; opacity: 0; overflow: hidden;">
+<p class="font-body text-[15px] text-white/70 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Nos encargamos de coordinar cada etapa del proyecto: materiales, proveedores, tiempos y ejecución de obra. El objetivo es que todo avance de forma ordenada, eficiente y sin complicaciones para el cliente.</p>
+</div>
+</div>
+
+<div class="method-accordion-item glass-border bg-white/10 backdrop-blur-20px rounded-2xl transition-all duration-700" data-index="2">
+<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(2)">
+<span class="font-display text-4xl md:text-5xl text-secondary font-bold">03</span>
+<div class="border-l-2 border-secondary pl-6 flex-1">
+<h4 class="font-headline text-lg md:text-xl text-white">Entrega llave en mano</h4>
+</div>
+<div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 method-toggle">
+<span class="font-body text-white text-xl leading-none method-toggle-icon">+</span>
+</div>
+</button>
+<div class="method-accordion-body px-5 md:px-7 pb-6" style="max-height: 0; opacity: 0; overflow: hidden;">
+<p class="font-body text-[15px] text-white/70 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Entregamos el proyecto completamente terminado y listo para usar. Vos recibís el resultado final sin tener que ocuparte de la coordinación ni del seguimiento de la obra.</p>
+</div>
+</div>
+</div>
+
+<!-- Bottom values bar -->
+<div class="mt-20 flex items-center justify-center gap-6 reveal">
+<div class="h-[1px] w-16 bg-white/20"></div>
+<div class="flex items-center gap-6">
+<span class="font-label text-[10px] text-white/50 uppercase tracking-[0.3em]">Calidad</span>
+<span class="text-white/20">·</span>
+<span class="font-label text-[10px] text-white/50 uppercase tracking-[0.3em]">Transparencia</span>
+<span class="text-white/20">·</span>
+<span class="font-label text-[10px] text-white/50 uppercase tracking-[0.3em]">Compromiso</span>
+</div>
+<div class="h-[1px] w-16 bg-white/20"></div>
+</div>
+</div>
+</section>
+
+<section class="py-16 md:py-32 relative bg-surface" style="overflow-x: clip;" id="proyectos">
+
+<div class="relative z-10">
+<div class="text-center mb-12 max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="reveal">
+<h2 class="font-label text-sm text-secondary font-bold uppercase tracking-widest mb-6">Portafolio</h2>
+<h3 class="font-display text-4xl md:text-6xl text-primary">Obras que Trascienden</h3>
+</div>
+</div>
+
+<div class="flex justify-center mb-16 reveal" style="transition-delay: 200ms">
+<div class="flex p-1.5 bg-surface-container-low rounded-full glass-border shadow-inner">
+<button class="carousel-filter px-8 py-3 rounded-full font-label text-[11px] uppercase tracking-[0.15em] transition-all duration-500 text-on-surface-variant hover:text-primary" onclick="filterCarousel('proyectos', this)">Proyectos</button>
+<button class="carousel-filter px-8 py-3 rounded-full font-label text-[11px] uppercase tracking-[0.15em] transition-all duration-500 bg-primary text-on-primary shadow-lg" onclick="filterCarousel('entregados', this)">Entregados</button>
+</div>
+</div>
+
+<div class="relative reveal">
+<div class="carousel-viewport mx-auto" id="carousel-viewport" style="position: relative; height: 460px; max-width: 1400px;">
+
+<div id="garibaldi-showcase" data-carousel-cat="proyectos" style="display:none; position:absolute; inset:0; z-index:5;">
+<div id="showcase-track" style="display:flex; align-items:center; justify-content:center; gap:12px; height:100%; max-width:1200px; margin:0 auto; padding:0 20px;"></div>
+<button onclick="showcaseNav(-1)" class="carousel-arrow-btn" style="left:24px; position:absolute; top:50%; transform:translateY(-50%); z-index:10;">
+<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+</button>
+<button onclick="showcaseNav(1)" class="carousel-arrow-btn" style="right:24px; position:absolute; top:50%; transform:translateY(-50%); z-index:10;">
+<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+</button>
+</div>
+
+
+<div class="carousel-card" data-carousel-cat="entregados" data-name="Remodelación Integral" data-cat-label="Entregados" data-img="img/remodelacion/3.jpg" data-gallery='["img/remodelacion/4.jpg","img/remodelacion/2.jpg","img/remodelacion/1.jpg"]' data-year="2025" data-desc="Remodelación integral con diseño contemporáneo, cocina equipada y espacios renovados de primer nivel." onclick="carouselGoTo(this)">
+<img alt="Remodelación Integral" src="img/remodelacion/3.jpg">
+<div class="carousel-card-glass">
+<h4 class="font-display text-lg text-white">Remodelación Integral</h4>
+<p class="font-body text-xs text-white/60 mt-1">Espacios renovados con diseño contemporáneo.</p>
+</div>
+</div>
+
+<div class="carousel-card" data-carousel-cat="entregados" data-name="Ballestero" data-cat-label="Entregados" data-img="img/ballestero/fachada.jpg" data-gallery='["img/ballestero/pasillo.jpg","img/ballestero/entrada-casa.jpg","img/ballestero/interior.jpg","img/ballestero/habitacion.jpg","img/ballestero/render-general.jpg"]' data-year="2021" data-desc="El proyecto se compone de 4 dúplex, 1 monoambiente y 2 cocheras. Entregado con cocina instalada y purificador en acero inoxidable, termotanque, calefactor, luminaria, cerradura con Huella Digital y Bluetooth. El complejo cuenta con estacionamiento para motos y bicicletas." onclick="carouselGoTo(this)">
+<img alt="Ballestero" src="img/ballestero/fachada.jpg">
+<div class="carousel-card-glass">
+<h4 class="font-display text-lg text-white">Ballestero</h4>
+<p class="font-body text-xs text-white/60 mt-1">Diseño integral y materialidad de primer nivel.</p>
+</div>
+</div>
+
+<div class="carousel-card" data-carousel-cat="entregados" data-name="Quincho" data-cat-label="Entregados" data-img="img/quincho/exterior-2.jpg" data-gallery='["img/quincho/galeria.jpg","img/quincho/living.jpg","img/quincho/cocina.jpg"]' data-year="2024" data-desc="En esta obra nos ocupamos de todo, desde el proyecto de arquitectura y diseño, gestión y elección de materiales, gestión de mano de obra y además realizamos el diseño de todos los amoblamientos a medida." onclick="carouselGoTo(this)">
+<img alt="Quincho" src="img/quincho/exterior-2.jpg">
+<div class="carousel-card-glass">
+<h4 class="font-display text-lg text-white">Quincho</h4>
+<p class="font-body text-xs text-white/60 mt-1">Diseño integral para disfrutar al máximo.</p>
+</div>
+</div>
+
+<div class="carousel-card" data-carousel-cat="entregados" data-name="Casas Calihue" data-cat-label="Entregados" data-img="img/calihue/1.jpg" data-gallery='["img/calihue/2.jpg","img/calihue/3.jpg","img/calihue/4.jpg","img/calihue/5.jpg","img/calihue/6.jpg","img/calihue/7.jpg"]' data-year="2026" data-desc="Ubicado en Villa La Angostura. Se trata de casas de dos y tres dormitorios, con espacios interiores óptimos, ubicadas en un entorno natural con vistas del bosque." onclick="carouselGoTo(this)">
+<img alt="Casas Calihue" src="img/calihue/1.jpg">
+<div class="carousel-card-glass">
+<h4 class="font-display text-lg text-white">Casas Calihue</h4>
+<p class="font-body text-xs text-white/60 mt-1">Diseño moderno y terminaciones de calidad.</p>
+</div>
+</div>
+
+<button class="carousel-arrow-btn main-carousel-arrow left-4 md:left-12" onclick="carouselPrev()">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<button class="carousel-arrow-btn main-carousel-arrow right-4 md:right-12" onclick="carouselNext()">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+
+</div>
+
+<div class="flex justify-center gap-2 mt-10" id="carousel-dots"></div>
+</div>
+</div>
+</section>
+
+<section class="py-16 md:py-32 relative overflow-hidden" id="contacto">
+<div class="absolute inset-0 z-0 bg-primary/90"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-6 md:px-margin-desktop flex flex-col items-center text-center">
+<div class="reveal">
+<h2 class="font-label text-sm text-secondary font-bold uppercase tracking-widest">EMPECEMOS HOY</h2>
+<h3 class="font-display text-4xl md:text-6xl text-white leading-tight mt-4">Nos ocupamos de todo</h3>
+</div>
+<p class="reveal font-body text-lg text-white/70 mt-6 max-w-2xl">Agendemos una reunión gratuita. Analizaremos su visión y ofreceremos una propuesta integral llave en mano.</p>
+<a href="https://wa.me/543471537155?text=Hola%2C%20me%20interesa%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="reveal mt-10 inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-label text-xs sm:text-sm uppercase tracking-[0.15em] font-bold px-6 sm:px-10 py-4 sm:py-5 rounded-full transition-all duration-300 shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 active:scale-95 magnetic btn-shimmer">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+Escribinos por WhatsApp
+</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="bg-primary w-full py-16 border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="space-y-6 reveal">
+<div class="font-headline text-2xl text-on-primary">Paimún Construcciones</div>
+<p class="font-body text-md text-on-primary/70 max-w-md">Liderando el estándar de construcción premium en la región. Nuestra misión es la perfección técnica y la satisfacción total del cliente.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 reveal">
+<div>
+<h5 class="font-label text-[11px] text-secondary mb-6 uppercase tracking-widest">EXPLORAR</h5>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="https://instagram.com/paimun.ok" target="_blank">Instagram</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#">LinkedIn</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#proyectos">Proyectos Recientes</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label text-[11px] text-secondary mb-6 uppercase tracking-widest">LEGAL</h5>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#">Políticas de Privacidad</a></li>
+<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#">Términos de Servicio</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 reveal">
+<p class="font-body text-sm text-on-primary/50">© Paimún Construcciones. Todos los derechos reservados.</p>
+</div>
+</footer>
+
+<script>
+// Curtain Reveal Animation
+(function() {
+    var curtainL = document.getElementById('curtain-left');
+    var curtainR = document.getElementById('curtain-right');
+    setTimeout(function() {
+        if (curtainL) curtainL.style.transform = 'translateX(-100%)';
+        if (curtainR) curtainR.style.transform = 'translateX(100%)';
+        document.body.classList.remove('overflow-y-hidden');
+        setTimeout(function() {
+            if (curtainL) curtainL.remove();
+            if (curtainR) curtainR.remove();
+        }, 900);
+    }, 400);
+})();
+
+// Intersection Observer
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+// Cursor
+var dot = document.getElementById('cursor-dot');
+var ring = document.getElementById('cursor-ring');
+var mouseX = -100, mouseY = -100, dotX = -100, dotY = -100, ringX = -100, ringY = -100;
+var isHovering = false, isVisible = false;
+if (dot && ring) {
+    var darkSections = [document.getElementById('contacto'), document.getElementById('metodo'), document.querySelector('footer')];
+    var onDark = false;
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX; mouseY = e.clientY;
+        if (!isVisible) { isVisible = true; dot.style.opacity = '1'; ring.style.opacity = '1'; }
+        var overDark = false;
+        darkSections.forEach(function(sec) { if (sec) { var r = sec.getBoundingClientRect(); if (e.clientY >= r.top && e.clientY <= r.bottom) overDark = true; } });
+        if (overDark !== onDark) {
+            onDark = overDark;
+            dot.style.background = onDark ? 'rgba(255,255,255,0.9)' : '#233b61';
+            ring.style.borderColor = onDark ? 'rgba(255,255,255,0.5)' : 'rgba(35,59,97,0.4)';
+            if (onDark) document.body.classList.add('cursor-on-dark'); else document.body.classList.remove('cursor-on-dark');
+        }
+    });
+    document.addEventListener('mouseleave', function() {
+        isVisible = false; dot.style.opacity = '0'; ring.style.opacity = '0';
+    });
+    var interactives = 'a, button, select, input, textarea, .cursor-pointer, [onclick], .group';
+    document.addEventListener('mouseover', function(e) {
+        if (e.target.closest(interactives)) { document.body.classList.add('cursor-hover'); isHovering = true; }
+    });
+    document.addEventListener('mouseout', function(e) {
+        if (e.target.closest(interactives)) { document.body.classList.remove('cursor-hover'); isHovering = false; }
+    });
+    (function render() {
+        dotX += (mouseX - dotX) * 0.25; dotY += (mouseY - dotY) * 0.25;
+        dot.style.transform = 'translate3d(' + (dotX - 3) + 'px, ' + (dotY - 3) + 'px, 0)';
+        ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12;
+        var ringOffset = isHovering ? 32 : 16;
+        ring.style.transform = 'translate3d(' + (ringX - ringOffset) + 'px, ' + (ringY - ringOffset) + 'px, 0)';
+        requestAnimationFrame(render);
+    })();
+}
+
+// Magnetic
+document.querySelectorAll('.magnetic').forEach(function(el) {
+    el.addEventListener('mousemove', function(e) {
+        var rect = this.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        this.style.transform = 'translate3d(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px, 0)';
+    });
+    el.addEventListener('mouseleave', function() { this.style.transform = 'translate3d(0px, 0px, 0)'; });
+});
+
+// Parallax
+document.addEventListener('mousemove', function(e) {
+    document.querySelectorAll('.parallax-target').forEach(function(target) {
+        var speed = target.getAttribute('data-speed') || 0.02;
+        var x = (window.innerWidth - e.pageX * 2) / 100;
+        var y = (window.innerHeight - e.pageY * 2) / 100;
+        target.style.transform = 'translate3d(' + (x * speed * 20) + 'px, ' + (y * speed * 20) + 'px, 0)';
+    });
+});
+
+// Accordion
+var activeAccordion = -1;
+function toggleAccordion(index) {
+    var items = document.querySelectorAll('.method-accordion-item');
+    var isClosing = (activeAccordion === index);
+    items.forEach(function(item, i) {
+        var body = item.querySelector('.method-accordion-body');
+        var icon = item.querySelector('.method-toggle-icon');
+        var btn = item.querySelector('button');
+        if (i === index && !isClosing) {
+            body.style.height = '100px';
+            body.style.maxHeight = '100px';
+            body.style.opacity = '1';
+            body.style.overflow = 'visible';
+            btn.style.padding = '';
+            icon.textContent = String.fromCharCode(8722);
+        } else {
+            body.style.height = '0';
+            body.style.maxHeight = '0';
+            body.style.opacity = '0';
+            body.style.overflow = 'hidden';
+            btn.style.padding = '0.4rem 1.25rem';
+            icon.textContent = '+';
+        }
+    });
+    activeAccordion = isClosing ? -1 : index;
+}
+
+// 3D Carousel — Layout: [1 left] [FOCUS] [2 right]
+var carouselIndex = 1;
+var lastCarouselIndex = 1;
+var currentCarouselFilter = 'entregados';
+var carouselTimers = [];
+
+function getFilteredCards() {
+    var all = document.querySelectorAll('.carousel-card');
+    var filtered = [];
+    all.forEach(function(card) {
+        if (card.getAttribute('data-carousel-cat') === currentCarouselFilter) {
+            filtered.push(card);
+        }
+    });
+    return filtered;
+}
+
+function getCarouselSpacing() {
+    var w = window.innerWidth;
+    if (w < 768) return { x: 200, rot: 6, sc: 0.08 };
+    if (w < 1024) return { x: 280, rot: 6, sc: 0.08 };
+    return { x: 320, rot: 7, sc: 0.08 };
+}
+
+// Asymmetric offset: always maps to [-1, len-2] so layout is 1-left + focus + (len-2)-right
+function carouselOffset(i, center, len) {
+    var r = ((i - center) % len + len) % len;
+    if (r > len - 2) r -= len;
+    return r;
+}
+
+function applyCardStyle(card, offset, sp) {
+    var absOff = Math.abs(offset);
+    var scale = offset === 0 ? 1.05 : (1 - absOff * sp.sc);
+    var opacity = offset === 0 ? 1 : Math.max(0.5, 1 - absOff * 0.15);
+    card.style.transform = 'perspective(1200px) translateX(' + (offset * sp.x) + 'px) rotateY(' + (offset * -(sp.rot)) + 'deg) scale(' + scale + ')';
+    card.style.opacity = String(opacity);
+    card.style.zIndex = String(10 - absOff);
+    card.style.pointerEvents = offset >= -1 && offset <= 2 ? 'auto' : 'none';
+    if (offset === 0) { card.classList.add('carousel-card-active'); } else { card.classList.remove('carousel-card-active'); }
+    var glass = card.querySelector('.carousel-card-glass');
+    if (glass) {
+        glass.style.opacity = offset === 0 ? '1' : '0.7';
+        glass.style.background = offset === 0 ? 'linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 55%, transparent 100%)' : '';
+    }
+}
+
+function updateCarousel() {
+    // Cancel any pending wrap animations from rapid clicks
+    carouselTimers.forEach(function(id) { clearTimeout(id); });
+    carouselTimers = [];
+
+    var allCards = document.querySelectorAll('.carousel-card');
+    var filtered = getFilteredCards();
+    var sp = getCarouselSpacing();
+    var len = filtered.length;
+    var T = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+    // Hide other category
+    allCards.forEach(function(card) {
+        if (card.getAttribute('data-carousel-cat') !== currentCarouselFilter) {
+            card.style.transition = 'none';
+            card.style.opacity = '0';
+            card.style.pointerEvents = 'none';
+            card.style.zIndex = '0';
+        }
+    });
+
+    filtered.forEach(function(card, i) {
+        var off = carouselOffset(i, carouselIndex, len);
+        var prev = carouselOffset(i, lastCarouselIndex, len);
+        var wrap = Math.abs(off - prev) > 2;
+
+        // Outside visible window [-1, 2]
+        if (off < -1 || off > 2) {
+            card.style.transition = (prev >= -1 && prev <= 2) ? T : 'none';
+            card.style.opacity = '0';
+            card.style.pointerEvents = 'none';
+            return;
+        }
+
+        if (wrap) {
+            // Wrapping card: place at destination invisible, then animate in
+            var absOff = Math.abs(off);
+            var sc = off === 0 ? 1.05 : (1 - absOff * sp.sc);
+            card.style.transition = 'none';
+            card.style.transform = 'perspective(1200px) translateX(' + (off * sp.x) + 'px) rotateY(' + (off * -(sp.rot)) + 'deg) scale(' + (sc * 0.94) + ')';
+            card.style.opacity = '0';
+            card.style.zIndex = String(10 - absOff);
+            card.style.pointerEvents = 'auto';
+            var glass = card.querySelector('.carousel-card-glass');
+            if (glass) glass.style.opacity = off === 0 ? '1' : '0.7';
+
+            // Force reflow then animate
+            void card.offsetWidth;
+            (function(c, o, s, t) {
+                var id = setTimeout(function() {
+                    c.style.transition = t;
+                    applyCardStyle(c, o, s);
+                }, 20);
+                carouselTimers.push(id);
+            })(card, off, sp, T);
+        } else {
+            // Normal slide: all cards shift one position
+            card.style.transition = T;
+            applyCardStyle(card, off, sp);
+        }
+    });
+
+    lastCarouselIndex = carouselIndex;
+    updateCarouselDots(filtered.length);
+}
+
+function carouselNext() {
+    var filtered = getFilteredCards();
+    carouselIndex = (carouselIndex + 1) % filtered.length;
+    updateCarousel();
+}
+
+function carouselPrev() {
+    var filtered = getFilteredCards();
+    carouselIndex = (carouselIndex - 1 + filtered.length) % filtered.length;
+    updateCarousel();
+}
+
+function carouselGoTo(card) {
+    var filtered = getFilteredCards();
+    var idx = -1;
+    for (var i = 0; i < filtered.length; i++) {
+        if (filtered[i] === card) { idx = i; break; }
+    }
+    if (idx === carouselIndex) {
+        var name = card.getAttribute('data-name');
+        var catLabel = card.getAttribute('data-cat-label');
+        var img = card.getAttribute('data-img');
+        var gallery = card.getAttribute('data-gallery');
+        var desc = card.getAttribute('data-desc');
+        var year = card.getAttribute('data-year');
+        openProjectModal(name, catLabel, img, gallery, desc, year);
+    } else if (idx !== -1) {
+        carouselIndex = idx;
+        updateCarousel();
+    }
+}
+
+function filterCarousel(cat, btn) {
+    currentCarouselFilter = cat;
+    carouselIndex = 1;
+    lastCarouselIndex = 1;
+    document.querySelectorAll('.carousel-filter').forEach(function(b) {
+        b.className = 'carousel-filter px-8 py-3 rounded-full font-label text-[11px] uppercase tracking-[0.15em] transition-all duration-500 text-on-surface-variant hover:text-primary';
+    });
+    btn.className = 'carousel-filter px-8 py-3 rounded-full font-label text-[11px] uppercase tracking-[0.15em] transition-all duration-500 bg-primary text-on-primary shadow-lg';
+    var showcase = document.getElementById('garibaldi-showcase');
+    var mainArrows = document.querySelectorAll('.main-carousel-arrow');
+    var dots = document.getElementById('carousel-dots');
+    if (cat === 'proyectos') {
+        showcase.style.display = 'block';
+        renderShowcase();
+        mainArrows.forEach(function(a) { a.style.display = 'none'; });
+        if (dots) dots.style.display = 'none';
+    } else {
+        showcase.style.display = 'none';
+        mainArrows.forEach(function(a) { a.style.display = 'flex'; });
+        if (dots) dots.style.display = 'flex';
+    }
+    updateCarousel();
+}
+
+function updateCarouselDots(count) {
+    var container = document.getElementById('carousel-dots');
+    if (!container) return;
+    container.innerHTML = '';
+    for (var i = 0; i < count; i++) {
+        var dot = document.createElement('div');
+        dot.className = 'carousel-dot' + (i === carouselIndex ? ' active' : '');
+        dot.onclick = (function(idx) { return function() { carouselIndex = idx; updateCarousel(); }; })(i);
+        container.appendChild(dot);
+    }
+}
+
+// Init carousel on load
+setTimeout(function() { updateCarousel(); }, 100);
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight') carouselNext();
+    if (e.key === 'ArrowLeft') carouselPrev();
+});
+
+// Touch swipe support
+(function() {
+    var viewport = document.getElementById('carousel-viewport');
+    if (!viewport) return;
+    var startX = 0;
+    viewport.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+    viewport.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) carouselNext();
+            else carouselPrev();
+        }
+    }, { passive: true });
+})();
+
+window.addEventListener('resize', function() { updateCarousel(); renderShowcase(); });
+
+// Modal
+function renderModalGallery() {
+    var galleryEl = document.getElementById('modal-gallery');
+    var currentIdx = window._modalCurrentIdx;
+    var thumbs = window._modalThumbs || [];
+    var html = '';
+    for (var i = 0; i < thumbs.length; i++) {
+        if (i === currentIdx) continue;
+        html += '<div class="aspect-square rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300" style="will-change:transform;" data-idx="' + i + '" onmousedown="this.style.transform=\'scale(1.05)\'" onmouseup="this.style.transform=\'scale(1)\'" onmouseleave="this.style.transform=\'scale(1)\'"><img src="' + thumbs[i] + '" class="w-full h-full object-cover"></div>';
+    }
+    galleryEl.innerHTML = html;
+    galleryEl.querySelectorAll('div[data-idx]').forEach(function(div) {
+        div.onclick = function() {
+            var idx = parseInt(this.getAttribute('data-idx'));
+            window._modalCurrentIdx = idx;
+            var src = window._modalThumbs[idx];
+            document.getElementById('modal-main-image').querySelector('img').src = src;
+            renderModalGallery();
+            showZoom(src);
+        };
+    });
+}
+var showcaseImages = ['img/garibaldi/1.jpg','img/garibaldi/2.jpg','img/garibaldi/3.jpg','img/garibaldi/4.jpg','img/garibaldi/5.jpg','img/garibaldi/6.jpg'];
+var showcaseIdx = 0;
+function renderShowcase() {
+    var track = document.getElementById('showcase-track');
+    if (!track) return;
+    var len = showcaseImages.length;
+    var isMobile = window.innerWidth < 768;
+    var positions = isMobile ? [-1, 0, 1] : [-2, -1, 0, 1, 2];
+    var sizes = isMobile ? [
+        {w:80, h:200, r:12, op:0.5},
+        {w:220, h:300, r:20, op:1},
+        {w:80, h:200, r:12, op:0.5}
+    ] : [
+        {w:130, h:240, r:14, op:0.45},
+        {w:150, h:300, r:16, op:0.6},
+        {w:440, h:460, r:24, op:1},
+        {w:150, h:300, r:16, op:0.6},
+        {w:130, h:240, r:14, op:0.45}
+    ];
+    var centerIdx = isMobile ? 1 : 2;
+    var html = '';
+    for (var p = 0; p < positions.length; p++) {
+        var imgIdx = ((showcaseIdx + positions[p]) % len + len) % len;
+        var s = sizes[p];
+        var isCenter = p === centerIdx;
+        if (isCenter) {
+            html += '<div onclick="openGaribaldiModal()" style="flex:0 0 '+s.w+'px; height:'+s.h+'px; border-radius:'+s.r+'px; overflow:hidden; cursor:pointer; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.35); transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);" onmouseenter="this.style.transform=\'scale(1.02)\'" onmouseleave="this.style.transform=\'scale(1)\'">';
+            html += '<img src="'+showcaseImages[imgIdx]+'" class="w-full h-full object-cover">';
+            html += '<div class="carousel-card-glass" style="opacity:1; background:linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 55%, transparent 100%);">';
+            html += '<h4 class="font-display text-2xl text-white" style="text-shadow:0 2px 10px rgba(0,0,0,0.8); font-weight:700;">Garibaldi Haus</h4>';
+            html += '<p class="font-body text-sm text-white/80 mt-2" style="text-shadow:0 1px 8px rgba(0,0,0,0.7);">Dúplex contemporáneo con identidad propia.</p>';
+            html += '</div></div>';
+        } else {
+            html += '<div onclick="openGaribaldiModal()" style="flex:0 0 '+s.w+'px; height:'+s.h+'px; border-radius:'+s.r+'px; overflow:hidden; cursor:pointer; opacity:'+s.op+'; transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);">';
+            html += '<img src="'+showcaseImages[imgIdx]+'" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">';
+            html += '</div>';
+        }
+    }
+    track.innerHTML = html;
+}
+function showcaseNav(dir) {
+    showcaseIdx = ((showcaseIdx + dir) % showcaseImages.length + showcaseImages.length) % showcaseImages.length;
+    renderShowcase();
+}
+setTimeout(function() { renderShowcase(); }, 100);
+
+function openGaribaldiModal() {
+    openProjectModal('Garibaldi Haus', 'Proyectos', 'img/garibaldi/1.jpg', '["img/garibaldi/2.jpg","img/garibaldi/3.jpg","img/garibaldi/4.jpg","img/garibaldi/5.jpg","img/garibaldi/6.jpg"]', 'Dúplex de diseño contemporáneo con identidad propia. Líneas puras, materialidad noble y espacios pensados para vivir.', '2026');
+}
+function openProjectModal(title, category, mainImage, galleryData, description, year) {
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-category-label').innerText = category;
+    document.getElementById('modal-year').innerText = year || '2024';
+    document.getElementById('modal-main-image').querySelector('img').src = mainImage;
+    document.getElementById('modal-description').innerText = description || 'Residencia de alta gama con enfoque en sostenibilidad y materiales nobles. Superficie: 450m2.';
+    var galleryEl = document.getElementById('modal-gallery');
+    var imgs;
+    if (galleryData) {
+        try { imgs = JSON.parse(galleryData); } catch(e) { imgs = []; }
+    } else {
+        imgs = [
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ];
+    }
+    var allThumbs = [mainImage].concat(imgs);
+    window._modalThumbs = allThumbs;
+    window._modalCurrentIdx = 0;
+    renderModalGallery();
+    document.body.classList.add('modal-active');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+    document.body.classList.remove('modal-active');
+    document.body.style.overflow = 'auto';
+}
+document.addEventListener('keydown', function(e) {
+    var zv = document.getElementById('zoom-view');
+    var zvOpen = zv && zv.style.display === 'flex';
+    if (e.key === 'Escape') {
+        if (zvOpen) { zv.style.display = 'none'; }
+        else { closeModal(); }
+    }
+    if (zvOpen && e.key === 'ArrowRight') { zv.querySelectorAll('button')[1].click(); }
+    if (zvOpen && e.key === 'ArrowLeft') { zv.querySelectorAll('button')[0].click(); }
+});
+
+// Zoom view
+(function() {
+    var zv = document.createElement('div');
+    zv.id = 'zoom-view';
+    zv.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:200;display:none;align-items:center;justify-content:center;cursor:zoom-out;';
+    var zi = document.createElement('img');
+    zi.style.cssText = 'max-width:82vw;max-height:90vh;object-fit:contain;border-radius:12px;';
+    zi.onclick = function(e) { e.stopPropagation(); };
+    var btnStyle = 'position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:28px;width:48px;height:48px;border-radius:50%;cursor:pointer;backdrop-filter:blur(8px);transition:background 0.3s;display:flex;align-items:center;justify-content:center;';
+    var btnPrev = document.createElement('button');
+    btnPrev.innerHTML = '&#10094;';
+    btnPrev.style.cssText = btnStyle + 'left:20px;';
+    btnPrev.onmouseenter = function() { this.style.background='rgba(255,255,255,0.3)'; };
+    btnPrev.onmouseleave = function() { this.style.background='rgba(255,255,255,0.15)'; };
+    btnPrev.onclick = function(e) { e.stopPropagation(); zoomNav(-1); };
+    var btnNext = document.createElement('button');
+    btnNext.innerHTML = '&#10095;';
+    btnNext.style.cssText = btnStyle + 'right:20px;';
+    btnNext.onmouseenter = function() { this.style.background='rgba(255,255,255,0.3)'; };
+    btnNext.onmouseleave = function() { this.style.background='rgba(255,255,255,0.15)'; };
+    btnNext.onclick = function(e) { e.stopPropagation(); zoomNav(1); };
+    zv.appendChild(zi);
+    zv.appendChild(btnPrev);
+    zv.appendChild(btnNext);
+    zv.onclick = function() { zv.style.display = 'none'; };
+    document.body.appendChild(zv);
+    var zvIdx = 0;
+    function zoomNav(dir) {
+        var thumbs = window._modalThumbs || [];
+        if (!thumbs.length) return;
+        zvIdx = (zvIdx + dir + thumbs.length) % thumbs.length;
+        zi.src = thumbs[zvIdx];
+        window._modalCurrentIdx = zvIdx;
+        document.getElementById('modal-main-image').querySelector('img').src = thumbs[zvIdx];
+        renderModalGallery();
+    }
+    window.showZoom = function(src) {
+        var thumbs = window._modalThumbs || [];
+        zvIdx = thumbs.indexOf(src);
+        if (zvIdx < 0) zvIdx = window._modalCurrentIdx || 0;
+        zi.src = src;
+        zv.style.display = 'flex';
+    };
+})();
+
+</script>
+</body>
+</html>
