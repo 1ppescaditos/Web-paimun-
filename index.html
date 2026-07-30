@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="tailwind.config.js"></script>
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body class="bg-background text-on-surface selection:bg-secondary/30 overflow-x-hidden overflow-y-hidden">
 
@@ -642,6 +642,12 @@ function filterCarousel(cat, btn) {
         showcase.style.display = 'none';
         mainArrows.forEach(function(a) { a.style.display = 'flex'; });
         if (dots) dots.style.display = 'flex';
+        // Restaura la altura del viewport en mobile (el showcase la reducia).
+        // En desktop la altura inline (460px) debe quedar intacta.
+        if (window.innerWidth < 768) {
+            var vp = document.getElementById('carousel-viewport');
+            if (vp) vp.style.removeProperty('height');
+        }
     }
     updateCarousel();
 }
@@ -713,19 +719,25 @@ function renderShowcase() {
     if (!track) return;
     var len = showcaseImages.length;
     var isMobile = window.innerWidth < 768;
-    var positions = isMobile ? [-1, 0, 1] : [-2, -1, 0, 1, 2];
-    var sizes = isMobile ? [
-        {w:80, h:200, r:12, op:0.5},
-        {w:220, h:300, r:20, op:1},
-        {w:80, h:200, r:12, op:0.5}
-    ] : [
-        {w:130, h:240, r:14, op:0.45},
-        {w:150, h:300, r:16, op:0.6},
-        {w:440, h:460, r:24, op:1},
-        {w:150, h:300, r:16, op:0.6},
-        {w:130, h:240, r:14, op:0.45}
-    ];
-    var centerIdx = isMobile ? 1 : 2;
+    // En mobile: una sola imagen apaisada grande (las fotos son 16:9, se recortan
+    // feo en cajas verticales). En desktop: layout de 5 con peeks laterales.
+    var positions = isMobile ? [0] : [-2, -1, 0, 1, 2];
+    var sizes;
+    if (isMobile) {
+        var vw = document.documentElement.clientWidth;
+        var cW = Math.min(Math.round(vw * 0.86), 420);
+        var cH = Math.round(cW * 0.62); // apaisado, acorde a fotos 16:9
+        sizes = [ {w:cW, h:cH, r:20, op:1} ];
+    } else {
+        sizes = [
+            {w:130, h:240, r:14, op:0.45},
+            {w:150, h:300, r:16, op:0.6},
+            {w:440, h:460, r:24, op:1},
+            {w:150, h:300, r:16, op:0.6},
+            {w:130, h:240, r:14, op:0.45}
+        ];
+    }
+    var centerIdx = isMobile ? 0 : 2;
     var html = '';
     for (var p = 0; p < positions.length; p++) {
         var imgIdx = ((showcaseIdx + positions[p]) % len + len) % len;
@@ -745,6 +757,19 @@ function renderShowcase() {
         }
     }
     track.innerHTML = html;
+    // En mobile el showcase es apaisado (bajo): ajustamos la altura del viewport
+    // para que no quede espacio vacio (el carrusel Entregados usa una altura mayor).
+    var vpEl = document.getElementById('carousel-viewport');
+    if (vpEl) {
+        var sc = document.getElementById('garibaldi-showcase');
+        if (isMobile && sc && sc.style.display !== 'none') {
+            // 'important' para ganarle al height !important del CSS mobile.
+            vpEl.style.setProperty('height', (sizes[centerIdx].h + 32) + 'px', 'important');
+        } else if (!isMobile) {
+            // Desktop (incluye telefono en landscape >768): altura fija original.
+            vpEl.style.setProperty('height', '460px');
+        }
+    }
 }
 function showcaseNav(dir) {
     showcaseIdx = ((showcaseIdx + dir) % showcaseImages.length + showcaseImages.length) % showcaseImages.length;

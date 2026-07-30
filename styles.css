@@ -311,11 +311,23 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
 @media (max-width: 768px) {
     #cursor-dot, #cursor-ring, #cursor-glow { display: none !important; }
     body { cursor: auto !important; }
+    /* Mobile: una sola tarjeta grande y fluida (se navega con swipe/flechas/dots).
+       No depende de los transforms 3D, que en pantallas chicas quedan apretados. */
     .carousel-card {
-        width: 200px;
-        height: 290px;
-        margin-left: -100px;
-        margin-top: -145px;
+        width: min(84vw, 340px) !important;
+        height: auto !important;
+        aspect-ratio: 4 / 5;
+        top: 50%;
+        left: 50%;
+        margin: 0 !important;
+        transform: translate(-50%, -50%) !important;
+    }
+    .carousel-card:not(.carousel-card-active) {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    .carousel-card-active {
+        opacity: 1 !important;
     }
     .carousel-card-solo {
         width: 320px !important;
@@ -333,7 +345,7 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
         height: 40px;
     }
     .carousel-viewport {
-        height: 340px !important;
+        height: calc(min(84vw, 340px) * 1.25) !important;
     }
     #garibaldi-showcase .showcase-side {
         display: none;
@@ -341,17 +353,5 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
     #garibaldi-showcase > div:first-child {
         gap: 0 !important;
         padding: 0 12px !important;
-    }
-    #garibaldi-showcase > div:first-child > div:nth-child(2),
-    #garibaldi-showcase > div:first-child > div:nth-child(4) {
-        display: block !important;
-        flex: 0 0 80px !important;
-        height: 200px !important;
-        border-radius: 12px !important;
-        opacity: 0.5 !important;
-    }
-    #garibaldi-showcase > div:first-child > div:nth-child(3) {
-        flex: 0 0 220px !important;
-        height: 300px !important;
     }
 }
