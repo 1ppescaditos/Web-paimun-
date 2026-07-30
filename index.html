@@ -722,15 +722,22 @@ function renderShowcase() {
     if (!track) return;
     var len = showcaseImages.length;
     var isMobile = window.innerWidth < 768;
-    // En mobile: una sola imagen apaisada grande (las fotos son 16:9, se recortan
-    // feo en cajas verticales). En desktop: layout de 5 con peeks laterales.
-    var positions = isMobile ? [0] : [-2, -1, 0, 1, 2];
+    // Mobile: central casi cuadrada (como en desktop) + dos peeks laterales.
+    // Todo fluido segun el ancho real del telefono para que no se descuadre.
+    var positions = isMobile ? [-1, 0, 1] : [-2, -1, 0, 1, 2];
     var sizes;
     if (isMobile) {
         var vw = document.documentElement.clientWidth;
-        var cW = Math.min(Math.round(vw * 0.86), 420);
-        var cH = Math.round(cW * 0.62); // apaisado, acorde a fotos 16:9
-        sizes = [ {w:cW, h:cH, r:20, op:1} ];
+        var g = 10;                                          // gap entre imagenes (coincide con el CSS)
+        var cW = Math.min(Math.round(vw * 0.52), 240);       // central
+        var cH = cW;                                         // casi cuadrada, como en desktop
+        var sW = Math.max(Math.floor((vw - 24 - cW - 2 * g) / 2), 40); // laterals (24 = padding del track)
+        var sH = Math.round(cH * 0.64);
+        sizes = [
+            {w:sW, h:sH, r:12, op:0.5},
+            {w:cW, h:cH, r:20, op:1},
+            {w:sW, h:sH, r:12, op:0.5}
+        ];
     } else {
         sizes = [
             {w:130, h:240, r:14, op:0.45},
@@ -740,7 +747,7 @@ function renderShowcase() {
             {w:130, h:240, r:14, op:0.45}
         ];
     }
-    var centerIdx = isMobile ? 0 : 2;
+    var centerIdx = isMobile ? 1 : 2;
     var html = '';
     for (var p = 0; p < positions.length; p++) {
         var imgIdx = ((showcaseIdx + positions[p]) % len + len) % len;

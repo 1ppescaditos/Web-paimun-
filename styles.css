@@ -351,7 +351,7 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
         display: none;
     }
     #garibaldi-showcase > div:first-child {
-        gap: 0 !important;
+        gap: 10px !important;
         padding: 0 12px !important;
     }
 }
