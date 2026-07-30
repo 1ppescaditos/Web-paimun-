@@ -542,6 +542,9 @@ function updateCarousel() {
             card.style.opacity = '0';
             card.style.pointerEvents = 'none';
             card.style.zIndex = '0';
+            // Sin la clase activa, el CSS mobile (opacity:1 !important) deja de
+            // mostrarla: evita que una tarjeta de la otra categoria se cuele.
+            card.classList.remove('carousel-card-active');
         }
     });
 
