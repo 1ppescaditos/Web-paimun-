@@ -535,7 +535,7 @@ function applyCardStyle(card, offset, sp) {
     }
 }
 
-function updateCarousel() {
+function updateCarousel(instant) {
     // Cancel any pending wrap animations from rapid clicks
     carouselTimers.forEach(function(id) { clearTimeout(id); });
     carouselTimers = [];
@@ -544,7 +544,8 @@ function updateCarousel() {
     var filtered = getFilteredCards();
     var sp = getCarouselSpacing();
     var len = filtered.length;
-    var T = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    // Easing suave (ease-out) para un desplazamiento mas fluido.
+    var T = instant ? 'none' : 'all 0.55s cubic-bezier(0.22, 1, 0.36, 1)';
     // Mobile: ventana simetrica (1 izquierda + foco + 1 derecha), como Proyectos.
     var maxRight = window.innerWidth < 768 ? 1 : 2;
 
@@ -568,13 +569,18 @@ function updateCarousel() {
 
         // Outside visible window [-1, maxRight]
         if (off < -1 || off > maxRight) {
-            card.style.transition = (prev >= -1 && prev <= maxRight) ? T : 'none';
+            card.style.transition = (!instant && prev >= -1 && prev <= maxRight) ? T : 'none';
+            // Posiciona la tarjeta oculta en su offset (fuera de vista) para que
+            // entre/salga deslizandose suave, sin saltos ni parpadeo.
+            var scOut = off === 0 ? 1.05 : (1 - Math.abs(off) * sp.sc);
+            card.style.transform = buildCardTransform(off, scOut, sp);
             card.style.opacity = '0';
             card.style.pointerEvents = 'none';
+            card.style.zIndex = String(10 - Math.abs(off));
             return;
         }
 
-        if (wrap) {
+        if (wrap && !instant) {
             // Wrapping card: place at destination invisible, then animate in
             var absOff = Math.abs(off);
             var sc = off === 0 ? 1.05 : (1 - absOff * sp.sc);
@@ -665,7 +671,8 @@ function filterCarousel(cat, btn) {
             if (vp) vp.style.removeProperty('height');
         }
     }
-    updateCarousel();
+    // Cambio de filtro instantaneo (sin transicion) para que no parpadee.
+    updateCarousel(true);
 }
 
 function updateCarouselDots(count) {
