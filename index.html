@@ -691,7 +691,17 @@ document.addEventListener('keydown', function(e) {
     }, { passive: true });
 })();
 
-window.addEventListener('resize', function() { updateCarousel(); renderShowcase(); });
+// Solo re-renderiza si cambia el ANCHO. En mobile, al scrollear, la barra del
+// navegador aparece/desaparece y dispara 'resize' (cambia solo el alto): si
+// reconstruimos el showcase ahi, las imagenes parpadean ("titilan").
+var _lastVW = window.innerWidth;
+window.addEventListener('resize', function() {
+    var w = window.innerWidth;
+    if (w === _lastVW) return;
+    _lastVW = w;
+    updateCarousel();
+    renderShowcase();
+});
 
 // Modal
 function renderModalGallery() {
