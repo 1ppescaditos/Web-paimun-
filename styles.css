@@ -311,23 +311,17 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
 @media (max-width: 768px) {
     #cursor-dot, #cursor-ring, #cursor-glow { display: none !important; }
     body { cursor: auto !important; }
-    /* Mobile: una sola tarjeta grande y fluida (se navega con swipe/flechas/dots).
-       No depende de los transforms 3D, que en pantallas chicas quedan apretados. */
+    /* Mobile: tarjeta central mas chica para dejar espacio a los proyectos
+       vecinos que asoman a los costados (como en Proyectos). El transform y la
+       opacity los pone el JS (buildCardTransform / applyCardStyle); el centrado
+       se resuelve con left/top 50% + translate(-50%,-50%) dentro del transform. */
     .carousel-card {
-        width: min(84vw, 340px) !important;
+        width: min(58vw, 300px) !important;
         height: auto !important;
         aspect-ratio: 4 / 5;
         top: 50%;
         left: 50%;
         margin: 0 !important;
-        transform: translate(-50%, -50%) !important;
-    }
-    .carousel-card:not(.carousel-card-active) {
-        opacity: 0 !important;
-        pointer-events: none !important;
-    }
-    .carousel-card-active {
-        opacity: 1 !important;
     }
     .carousel-card-solo {
         width: 320px !important;
@@ -345,7 +339,7 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
         height: 40px;
     }
     .carousel-viewport {
-        height: calc(min(84vw, 340px) * 1.25) !important;
+        height: calc(min(58vw, 300px) * 1.25 + 24px) !important;
     }
     #garibaldi-showcase .showcase-side {
         display: none;
