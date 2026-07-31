@@ -459,10 +459,11 @@ function toggleAccordion(index) {
         var icon = item.querySelector('.method-toggle-icon');
         var btn = item.querySelector('button');
         if (i === index && !isClosing) {
-            body.style.height = '100px';
-            body.style.maxHeight = '100px';
+            var h = body.scrollHeight + 'px';
+            body.style.height = h;
+            body.style.maxHeight = h;
             body.style.opacity = '1';
-            body.style.overflow = 'visible';
+            body.style.overflow = 'hidden';
             btn.style.padding = '';
             icon.textContent = String.fromCharCode(8722);
         } else {
