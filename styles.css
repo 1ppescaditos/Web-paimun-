@@ -163,10 +163,10 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
 .modal-active .modal-backdrop { display: block; opacity: 1; }
 .modal-active .modal-content { display: block; opacity: 1; transform: translate(-50%, -50%); }
 
-@media (hover: hover) and (pointer: fine) {
-    body { cursor: none; }
-    a, button, select, input, textarea, .cursor-pointer { cursor: none; }
-}
+html.custom-cursor, html.custom-cursor body,
+html.custom-cursor a, html.custom-cursor button,
+html.custom-cursor select, html.custom-cursor input,
+html.custom-cursor textarea, html.custom-cursor .cursor-pointer { cursor: none; }
 
 .method-accordion-body {
     transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
@@ -309,8 +309,6 @@ body.cursor-on-dark.cursor-hover #cursor-ring {
 }
 
 @media (max-width: 768px) {
-    #cursor-dot, #cursor-ring, #cursor-glow { display: none !important; }
-    body { cursor: auto !important; }
     /* Mobile: tarjeta central mas chica para dejar espacio a los proyectos
        vecinos que asoman a los costados (como en Proyectos). El transform y la
        opacity los pone el JS (buildCardTransform / applyCardStyle); el centrado
