@@ -108,7 +108,7 @@ gtag('js',new Date());gtag('config','G-MYL54CQ409');
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="dist/tailwind.min.css">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body class="bg-background text-on-surface selection:bg-secondary/30 overflow-x-hidden overflow-y-hidden">
 
@@ -125,7 +125,7 @@ gtag('js',new Date());gtag('config','G-MYL54CQ409');
 <div class="modal-content rounded-[40px] shadow-2xl" id="project-modal">
 <div class="p-8 md:p-12">
 <div class="flex justify-end mb-6">
-<button class="text-primary hover:text-secondary transition-colors magnetic" onclick="closeModal()">
+<button class="text-primary hover:text-secondary transition-colors magnetic" onclick="closeModal()" aria-label="Cerrar proyecto">
 <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
 </button>
 </div>
@@ -177,7 +177,7 @@ Solicitar Dossier Técnico
 <a class="font-label text-[10px] uppercase tracking-widest text-primary hover:text-secondary transition-all" href="#proyectos">Proyectos</a>
 </div>
 </div>
-<a href="https://wa.me/5493471537155?text=Hola%2C%20me%20interesa%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_whatsapp',{ubicacion:'nav'})" class="bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest px-8 py-3 rounded-full hover:opacity-90 transition-all active:scale-95 btn-shimmer magnetic mr-2 no-underline">
+<a href="https://wa.me/5493471537155?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20consultar%20por%20una%20obra" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_whatsapp',{ubicacion:'nav'})" class="bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest px-8 py-3 rounded-full hover:opacity-90 transition-all active:scale-95 btn-shimmer magnetic mr-2 no-underline">
 Consultar
 </a>
 </div>
@@ -202,7 +202,7 @@ Consultar
 Explorar Proyectos
 <svg class="w-5 h-5 transition-transform group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 </a>
-<a href="https://wa.me/5493471537155?text=Hola%2C%20me%20interesa%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_whatsapp',{ubicacion:'hero'})" class="glass-border bg-white/40 backdrop-blur-md text-primary px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-label text-xs sm:text-sm uppercase tracking-widest hover:bg-white/60 transition-all active:scale-95 magnetic text-center w-full sm:w-auto">Contactanos</a>
+<a href="https://wa.me/5493471537155?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20consultar%20por%20una%20obra" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_whatsapp',{ubicacion:'hero'})" class="glass-border bg-white/40 backdrop-blur-md text-primary px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-label text-xs sm:text-sm uppercase tracking-widest hover:bg-white/60 transition-all active:scale-95 magnetic text-center w-full sm:w-auto">Contactanos</a>
 </div>
 </div>
 <div class="hidden md:flex md:col-span-5 justify-end">
@@ -267,14 +267,14 @@ Explorar Proyectos
 <h2 class="font-display text-4xl md:text-6xl text-white mt-4 leading-tight">Así trabajamos<br><span class="text-secondary">en Paimún</span></h2>
 </div>
 <div class="lg:border-l lg:border-white/20 lg:pl-8">
-<p class="font-body text-lg text-white/70 leading-relaxed">Un proceso claro y transparente para que tu proyecto avance sin complicaciones, de principio a fin.</p>
+<p class="font-body text-lg text-white/80 leading-relaxed">Un proceso claro y transparente para que tu proyecto avance sin complicaciones, de principio a fin.</p>
 </div>
 </div>
 
 <!-- Accordion -->
 <div class="max-w-3xl space-y-4 reveal" id="method-accordion">
 <div class="method-accordion-item glass-border bg-white/10 backdrop-blur-20px rounded-2xl transition-all duration-700" data-index="0">
-<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(0)">
+<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(0)" aria-expanded="false" aria-label="Diseño y planificación">
 <span class="font-display text-4xl md:text-5xl text-secondary font-bold">01</span>
 <div class="border-l-2 border-secondary pl-6 flex-1">
 <h3 class="font-headline text-lg md:text-xl text-white">Diseño y planificación</h3>
@@ -284,12 +284,12 @@ Explorar Proyectos
 </div>
 </button>
 <div class="method-accordion-body px-5 md:px-7 pb-6" style="height: 0; max-height: 0; opacity: 0; overflow: hidden;">
-<p class="font-body text-[15px] text-white/70 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Definimos la idea del proyecto, sus necesidades y objetivos. En esta etapa se desarrollan los planos, renders y toda la planificación necesaria para que cada decisión tenga claridad antes de empezar la obra.</p>
+<p class="font-body text-[15px] text-white/80 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Definimos la idea del proyecto, sus necesidades y objetivos. En esta etapa se desarrollan los planos, renders y toda la planificación necesaria para que cada decisión tenga claridad antes de empezar la obra.</p>
 </div>
 </div>
 
 <div class="method-accordion-item glass-border bg-white/10 backdrop-blur-20px rounded-2xl transition-all duration-700" data-index="1">
-<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(1)">
+<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(1)" aria-expanded="false" aria-label="Gestión integral">
 <span class="font-display text-4xl md:text-5xl text-secondary font-bold">02</span>
 <div class="border-l-2 border-secondary pl-6 flex-1">
 <h3 class="font-headline text-lg md:text-xl text-white">Gestión integral</h3>
@@ -299,12 +299,12 @@ Explorar Proyectos
 </div>
 </button>
 <div class="method-accordion-body px-5 md:px-7 pb-6" style="max-height: 0; opacity: 0; overflow: hidden;">
-<p class="font-body text-[15px] text-white/70 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Nos encargamos de coordinar cada etapa del proyecto: materiales, proveedores, tiempos y ejecución de obra. El objetivo es que todo avance de forma ordenada, eficiente y sin complicaciones para el cliente.</p>
+<p class="font-body text-[15px] text-white/80 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Nos encargamos de coordinar cada etapa del proyecto: materiales, proveedores, tiempos y ejecución de obra. El objetivo es que todo avance de forma ordenada, eficiente y sin complicaciones para el cliente.</p>
 </div>
 </div>
 
 <div class="method-accordion-item glass-border bg-white/10 backdrop-blur-20px rounded-2xl transition-all duration-700" data-index="2">
-<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(2)">
+<button class="w-full flex items-center gap-6 md:gap-10 p-5 md:p-7 text-left transition-all duration-500" style="padding: 0.4rem 1.25rem;" onclick="toggleAccordion(2)" aria-expanded="false" aria-label="Entrega llave en mano">
 <span class="font-display text-4xl md:text-5xl text-secondary font-bold">03</span>
 <div class="border-l-2 border-secondary pl-6 flex-1">
 <h3 class="font-headline text-lg md:text-xl text-white">Entrega llave en mano</h3>
@@ -314,7 +314,7 @@ Explorar Proyectos
 </div>
 </button>
 <div class="method-accordion-body px-5 md:px-7 pb-6" style="max-height: 0; opacity: 0; overflow: hidden;">
-<p class="font-body text-[15px] text-white/70 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Entregamos el proyecto completamente terminado y listo para usar. Vos recibís el resultado final sin tener que ocuparte de la coordinación ni del seguimiento de la obra.</p>
+<p class="font-body text-[15px] text-white/80 leading-relaxed ml-[3rem] sm:ml-[4.5rem] md:ml-[5.5rem] border-l-2 border-white/10 pl-4 sm:pl-6">Entregamos el proyecto completamente terminado y listo para usar. Vos recibís el resultado final sin tener que ocuparte de la coordinación ni del seguimiento de la obra.</p>
 </div>
 </div>
 </div>
@@ -356,10 +356,10 @@ Explorar Proyectos
 
 <div id="garibaldi-showcase" data-carousel-cat="proyectos" style="display:none; position:absolute; inset:0; z-index:5;">
 <div id="showcase-track" style="display:flex; align-items:center; justify-content:center; gap:12px; height:100%; max-width:1200px; margin:0 auto; padding:0 20px;"></div>
-<button onclick="showcaseNav(-1)" class="carousel-arrow-btn" style="left:24px; position:absolute; top:50%; transform:translateY(-50%); z-index:10;">
+<button onclick="showcaseNav(-1)" class="carousel-arrow-btn" aria-label="Proyecto anterior" style="left:24px; position:absolute; top:50%; transform:translateY(-50%); z-index:10;">
 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
 </button>
-<button onclick="showcaseNav(1)" class="carousel-arrow-btn" style="right:24px; position:absolute; top:50%; transform:translateY(-50%); z-index:10;">
+<button onclick="showcaseNav(1)" class="carousel-arrow-btn" aria-label="Proyecto siguiente" style="right:24px; position:absolute; top:50%; transform:translateY(-50%); z-index:10;">
 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
 </button>
 </div>
@@ -369,7 +369,7 @@ Explorar Proyectos
 <img alt="Remodelación integral de vivienda en Cañada de Gómez" src="img/opt/remodelacion-bano-640w.webp" width="1268" height="1241" loading="lazy" decoding="async">
 <div class="carousel-card-glass">
 <h3 class="font-display text-lg text-white">Remodelación Integral</h3>
-<p class="font-body text-xs text-white/60 mt-1">Espacios renovados con diseño contemporáneo.</p>
+<p class="font-body text-xs text-white/80 mt-1">Espacios renovados con diseño contemporáneo.</p>
 </div>
 </div>
 
@@ -377,7 +377,7 @@ Explorar Proyectos
 <img alt="Fachada complejo Ballesteros, dúplex en Cañada de Gómez" src="img/opt/ballesteros-fachada-640w.webp" width="1086" height="1448" loading="lazy" decoding="async">
 <div class="carousel-card-glass">
 <h3 class="font-display text-lg text-white">Ballesteros</h3>
-<p class="font-body text-xs text-white/60 mt-1">Diseño integral y materialidad de primer nivel.</p>
+<p class="font-body text-xs text-white/80 mt-1">Diseño integral y materialidad de primer nivel.</p>
 </div>
 </div>
 
@@ -385,7 +385,7 @@ Explorar Proyectos
 <img alt="Quincho con diseño integral y amoblamientos a medida" src="img/opt/quincho-exterior-dia-640w.webp" width="1268" height="1241" loading="lazy" decoding="async">
 <div class="carousel-card-glass">
 <h3 class="font-display text-lg text-white">Quincho</h3>
-<p class="font-body text-xs text-white/60 mt-1">Diseño integral para disfrutar al máximo.</p>
+<p class="font-body text-xs text-white/80 mt-1">Diseño integral para disfrutar al máximo.</p>
 </div>
 </div>
 
@@ -393,14 +393,14 @@ Explorar Proyectos
 <img alt="Casas Calihue en Villa la Angostura, viviendas rodeadas de bosque y nieve" src="img/opt/calihue-fachada-nieve-640w.webp" width="1532" height="688" loading="lazy" decoding="async">
 <div class="carousel-card-glass">
 <h3 class="font-display text-lg text-white">Casas Calihue</h3>
-<p class="font-body text-xs text-white/60 mt-1">Diseño moderno y terminaciones de calidad.</p>
+<p class="font-body text-xs text-white/80 mt-1">Diseño moderno y terminaciones de calidad.</p>
 </div>
 </div>
 
-<button class="carousel-arrow-btn main-carousel-arrow left-4 md:left-12" onclick="carouselPrev()">
+<button class="carousel-arrow-btn main-carousel-arrow left-4 md:left-12" onclick="carouselPrev()" aria-label="Obra anterior">
 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
 </button>
-<button class="carousel-arrow-btn main-carousel-arrow right-4 md:right-12" onclick="carouselNext()">
+<button class="carousel-arrow-btn main-carousel-arrow right-4 md:right-12" onclick="carouselNext()" aria-label="Obra siguiente">
 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
 </button>
 
@@ -418,8 +418,8 @@ Explorar Proyectos
 <p class="font-label text-sm text-secondary font-bold uppercase tracking-widest">EMPECEMOS HOY</p>
 <h2 class="font-display text-4xl md:text-6xl text-white leading-tight mt-4">Nos ocupamos de todo</h2>
 </div>
-<p class="reveal font-body text-lg text-white/70 mt-6 max-w-2xl">Agendemos una reunión gratuita. Analizamos tu visión y te ofrecemos una propuesta integral llave en mano.</p>
-<a href="https://wa.me/5493471537155?text=Hola%2C%20me%20interesa%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_whatsapp',{ubicacion:'cierre'})" class="reveal mt-10 inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-label text-xs sm:text-sm uppercase tracking-[0.15em] font-bold px-6 sm:px-10 py-4 sm:py-5 rounded-full transition-all duration-300 shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 active:scale-95 magnetic btn-shimmer">
+<p class="reveal font-body text-lg text-white/80 mt-6 max-w-2xl">Agendemos una reunión gratuita. Analizamos tu visión y te ofrecemos una propuesta integral llave en mano.</p>
+<a href="https://wa.me/5493471537155?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20consultar%20por%20una%20obra" target="_blank" rel="noopener noreferrer" onclick="gtag('event','click_whatsapp',{ubicacion:'cierre'})" class="reveal mt-10 inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-label text-xs sm:text-sm uppercase tracking-[0.15em] font-bold px-6 sm:px-10 py-4 sm:py-5 rounded-full transition-all duration-300 shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 active:scale-95 magnetic btn-shimmer">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 Escribinos por WhatsApp
 </a>
@@ -433,27 +433,26 @@ Escribinos por WhatsApp
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto px-6 md:px-margin-desktop">
 <div class="space-y-6 reveal">
 <div class="font-headline text-2xl text-on-primary">Paimún Construcciones</div>
-<p class="font-body text-md text-on-primary/70 max-w-md">Liderando el estándar de construcción premium en Cañada de Gómez, Armstrong y Villa la Angostura. Nuestra misión es la perfección técnica y la satisfacción total de cada cliente.</p>
+<p class="font-body text-md text-on-primary/80 max-w-md">Liderando el estándar de construcción premium en Cañada de Gómez, Armstrong y Villa la Angostura. Nuestra misión es la perfección técnica y la satisfacción total de cada cliente.</p>
 </div>
 <div class="grid grid-cols-2 gap-8 reveal">
 <div>
 <p class="font-label text-[11px] text-secondary mb-6 uppercase tracking-widest">EXPLORAR</p>
 <ul class="space-y-3 font-body text-sm">
-<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="https://instagram.com/paimun.ok" target="_blank">Instagram</a></li>
-<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#proyectos">Proyectos Recientes</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary hover:pl-2 transition-all duration-500" href="https://instagram.com/paimun.ok" target="_blank">Instagram</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary hover:pl-2 transition-all duration-500" href="#proyectos">Proyectos Recientes</a></li>
 </ul>
 </div>
 <div>
 <p class="font-label text-[11px] text-secondary mb-6 uppercase tracking-widest">LEGAL</p>
 <ul class="space-y-3 font-body text-sm">
-<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#">Políticas de Privacidad</a></li>
-<li><a class="text-on-primary/70 hover:text-secondary hover:pl-2 transition-all duration-500" href="#">Términos de Servicio</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary hover:pl-2 transition-all duration-500" href="privacidad.html">Políticas de Privacidad</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 reveal">
-<p class="font-body text-sm text-on-primary/50">© Paimún Construcciones. Todos los derechos reservados.</p>
+<p class="font-body text-sm text-on-primary/60">© Paimún Construcciones. Todos los derechos reservados.</p>
 </div>
 </footer>
 
@@ -562,6 +561,7 @@ function toggleAccordion(index) {
             body.style.opacity = '1';
             body.style.overflow = 'hidden';
             btn.style.padding = '';
+            btn.setAttribute('aria-expanded', 'true');
             icon.textContent = String.fromCharCode(8722);
         } else {
             body.style.height = '0';
@@ -569,6 +569,7 @@ function toggleAccordion(index) {
             body.style.opacity = '0';
             body.style.overflow = 'hidden';
             btn.style.padding = '0.4rem 1.25rem';
+            btn.setAttribute('aria-expanded', 'false');
             icon.textContent = '+';
         }
     });
