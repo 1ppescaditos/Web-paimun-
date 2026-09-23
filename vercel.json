@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "construccionespaimun.ar" }],
+      "destination": "https://www.construccionespaimun.ar/:path*",
+      "statusCode": 301
+    }
+  ]
+}
