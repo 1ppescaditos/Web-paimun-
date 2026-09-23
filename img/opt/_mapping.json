@@ -1,0 +1,1002 @@
+{
+  "img/ballestero/fachada.jpg": {
+    "name": "ballesteros-fachada",
+    "orig_w": 1086,
+    "orig_h": 1448,
+    "sizes": {
+      "640": {
+        "path": "img/opt/ballesteros-fachada-640w.webp",
+        "w": 640,
+        "h": 853,
+        "size": 33388
+      },
+      "1024": {
+        "path": "img/opt/ballesteros-fachada-1024w.webp",
+        "w": 1024,
+        "h": 1365,
+        "size": 77196
+      },
+      "1920": {
+        "path": "img/opt/ballesteros-fachada-1920w.webp",
+        "w": 1086,
+        "h": 1448,
+        "size": 84598
+      }
+    }
+  },
+  "img/ballestero/pasillo.jpg": {
+    "name": "ballesteros-pasillo",
+    "orig_w": 1448,
+    "orig_h": 1086,
+    "sizes": {
+      "640": {
+        "path": "img/opt/ballesteros-pasillo-640w.webp",
+        "w": 640,
+        "h": 480,
+        "size": 40106
+      },
+      "1024": {
+        "path": "img/opt/ballesteros-pasillo-1024w.webp",
+        "w": 1024,
+        "h": 768,
+        "size": 102106
+      },
+      "1920": {
+        "path": "img/opt/ballesteros-pasillo-1920w.webp",
+        "w": 1448,
+        "h": 1086,
+        "size": 171514
+      }
+    }
+  },
+  "img/ballestero/entrada-casa.jpg": {
+    "name": "ballesteros-entrada",
+    "orig_w": 1086,
+    "orig_h": 1448,
+    "sizes": {
+      "640": {
+        "path": "img/opt/ballesteros-entrada-640w.webp",
+        "w": 640,
+        "h": 853,
+        "size": 54294
+      },
+      "1024": {
+        "path": "img/opt/ballesteros-entrada-1024w.webp",
+        "w": 1024,
+        "h": 1365,
+        "size": 119864
+      },
+      "1920": {
+        "path": "img/opt/ballesteros-entrada-1920w.webp",
+        "w": 1086,
+        "h": 1448,
+        "size": 128016
+      }
+    }
+  },
+  "img/ballestero/interior.jpg": {
+    "name": "ballesteros-interior",
+    "orig_w": 1448,
+    "orig_h": 1086,
+    "sizes": {
+      "640": {
+        "path": "img/opt/ballesteros-interior-640w.webp",
+        "w": 640,
+        "h": 480,
+        "size": 15864
+      },
+      "1024": {
+        "path": "img/opt/ballesteros-interior-1024w.webp",
+        "w": 1024,
+        "h": 768,
+        "size": 35224
+      },
+      "1920": {
+        "path": "img/opt/ballesteros-interior-1920w.webp",
+        "w": 1448,
+        "h": 1086,
+        "size": 62348
+      }
+    }
+  },
+  "img/ballestero/habitacion.jpg": {
+    "name": "ballesteros-habitacion",
+    "orig_w": 1448,
+    "orig_h": 1086,
+    "sizes": {
+      "640": {
+        "path": "img/opt/ballesteros-habitacion-640w.webp",
+        "w": 640,
+        "h": 480,
+        "size": 16792
+      },
+      "1024": {
+        "path": "img/opt/ballesteros-habitacion-1024w.webp",
+        "w": 1024,
+        "h": 768,
+        "size": 33540
+      },
+      "1920": {
+        "path": "img/opt/ballesteros-habitacion-1920w.webp",
+        "w": 1448,
+        "h": 1086,
+        "size": 57184
+      }
+    }
+  },
+  "img/ballestero/render-general.jpg": {
+    "name": "ballesteros-render",
+    "orig_w": 1537,
+    "orig_h": 1023,
+    "sizes": {
+      "640": {
+        "path": "img/opt/ballesteros-render-640w.webp",
+        "w": 640,
+        "h": 425,
+        "size": 19350
+      },
+      "1024": {
+        "path": "img/opt/ballesteros-render-1024w.webp",
+        "w": 1024,
+        "h": 681,
+        "size": 41370
+      },
+      "1920": {
+        "path": "img/opt/ballesteros-render-1920w.webp",
+        "w": 1537,
+        "h": 1023,
+        "size": 72464
+      }
+    }
+  },
+  "img/calihue/1.jpg": {
+    "name": "calihue-fachada-nieve",
+    "orig_w": 1532,
+    "orig_h": 688,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-fachada-nieve-640w.webp",
+        "w": 640,
+        "h": 287,
+        "size": 38864
+      },
+      "1024": {
+        "path": "img/opt/calihue-fachada-nieve-1024w.webp",
+        "w": 1024,
+        "h": 459,
+        "size": 87292
+      },
+      "1920": {
+        "path": "img/opt/calihue-fachada-nieve-1920w.webp",
+        "w": 1532,
+        "h": 688,
+        "size": 165110
+      }
+    }
+  },
+  "img/calihue/2.jpg": {
+    "name": "calihue-exterior-lateral",
+    "orig_w": 1080,
+    "orig_h": 1920,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-exterior-lateral-640w.webp",
+        "w": 640,
+        "h": 1137,
+        "size": 69402
+      },
+      "1024": {
+        "path": "img/opt/calihue-exterior-lateral-1024w.webp",
+        "w": 1024,
+        "h": 1820,
+        "size": 130486
+      },
+      "1920": {
+        "path": "img/opt/calihue-exterior-lateral-1920w.webp",
+        "w": 1080,
+        "h": 1920,
+        "size": 139602
+      }
+    }
+  },
+  "img/calihue/3.jpg": {
+    "name": "calihue-vista-bosque",
+    "orig_w": 932,
+    "orig_h": 1687,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-vista-bosque-640w.webp",
+        "w": 640,
+        "h": 1158,
+        "size": 88278
+      },
+      "1024": {
+        "path": "img/opt/calihue-vista-bosque-1024w.webp",
+        "w": 932,
+        "h": 1687,
+        "size": 145538
+      },
+      "1920": {
+        "path": "img/opt/calihue-vista-bosque-1024w.webp",
+        "w": 932,
+        "h": 1687,
+        "size": 145538
+      }
+    }
+  },
+  "img/calihue/4.jpg": {
+    "name": "calihue-detalle-madera",
+    "orig_w": 946,
+    "orig_h": 1663,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-detalle-madera-640w.webp",
+        "w": 640,
+        "h": 1125,
+        "size": 40152
+      },
+      "1024": {
+        "path": "img/opt/calihue-detalle-madera-1024w.webp",
+        "w": 946,
+        "h": 1663,
+        "size": 69392
+      },
+      "1920": {
+        "path": "img/opt/calihue-detalle-madera-1024w.webp",
+        "w": 946,
+        "h": 1663,
+        "size": 69392
+      }
+    }
+  },
+  "img/calihue/5.jpg": {
+    "name": "calihue-interior",
+    "orig_w": 941,
+    "orig_h": 1672,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-interior-640w.webp",
+        "w": 640,
+        "h": 1137,
+        "size": 50010
+      },
+      "1024": {
+        "path": "img/opt/calihue-interior-1024w.webp",
+        "w": 941,
+        "h": 1672,
+        "size": 86350
+      },
+      "1920": {
+        "path": "img/opt/calihue-interior-1024w.webp",
+        "w": 941,
+        "h": 1672,
+        "size": 86350
+      }
+    }
+  },
+  "img/calihue/6.jpg": {
+    "name": "calihue-panoramica",
+    "orig_w": 928,
+    "orig_h": 1694,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-panoramica-640w.webp",
+        "w": 640,
+        "h": 1168,
+        "size": 150064
+      },
+      "1024": {
+        "path": "img/opt/calihue-panoramica-1024w.webp",
+        "w": 928,
+        "h": 1694,
+        "size": 249646
+      },
+      "1920": {
+        "path": "img/opt/calihue-panoramica-1024w.webp",
+        "w": 928,
+        "h": 1694,
+        "size": 249646
+      }
+    }
+  },
+  "img/calihue/7.jpg": {
+    "name": "calihue-entrada",
+    "orig_w": 941,
+    "orig_h": 1672,
+    "sizes": {
+      "640": {
+        "path": "img/opt/calihue-entrada-640w.webp",
+        "w": 640,
+        "h": 1137,
+        "size": 55876
+      },
+      "1024": {
+        "path": "img/opt/calihue-entrada-1024w.webp",
+        "w": 941,
+        "h": 1672,
+        "size": 96104
+      },
+      "1920": {
+        "path": "img/opt/calihue-entrada-1024w.webp",
+        "w": 941,
+        "h": 1672,
+        "size": 96104
+      }
+    }
+  },
+  "img/garibaldi/1.jpg": {
+    "name": "garibaldi-fachada",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-fachada-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 29888
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-fachada-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 60478
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-fachada-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 116844
+      }
+    }
+  },
+  "img/garibaldi/2.jpg": {
+    "name": "garibaldi-lateral",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-lateral-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 29474
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-lateral-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 57946
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-lateral-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 112338
+      }
+    }
+  },
+  "img/garibaldi/3.jpg": {
+    "name": "garibaldi-interior",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-interior-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 18376
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-interior-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 36398
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-interior-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 70176
+      }
+    }
+  },
+  "img/garibaldi/4.jpg": {
+    "name": "garibaldi-living",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-living-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 23344
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-living-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 50836
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-living-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 101774
+      }
+    }
+  },
+  "img/garibaldi/5.jpg": {
+    "name": "garibaldi-cocina",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-cocina-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 24328
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-cocina-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 46718
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-cocina-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 94882
+      }
+    }
+  },
+  "img/garibaldi/6.jpg": {
+    "name": "garibaldi-dormitorio",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-dormitorio-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 13610
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-dormitorio-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 29990
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-dormitorio-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 64440
+      }
+    }
+  },
+  "img/garibaldi/cocina-barra.jpg": {
+    "name": "garibaldi-cocina-barra",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-cocina-barra-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 29474
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-cocina-barra-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 57946
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-cocina-barra-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 112338
+      }
+    }
+  },
+  "img/garibaldi/dormitorio-1.jpg": {
+    "name": "garibaldi-dormitorio-1",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-dormitorio-1-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 18376
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-dormitorio-1-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 36398
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-dormitorio-1-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 70176
+      }
+    }
+  },
+  "img/garibaldi/dormitorio-2.jpg": {
+    "name": "garibaldi-dormitorio-2",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-dormitorio-2-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 29888
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-dormitorio-2-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 60478
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-dormitorio-2-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 116844
+      }
+    }
+  },
+  "img/garibaldi/exterior-1.jpg": {
+    "name": "garibaldi-exterior-1",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-exterior-1-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 13610
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-exterior-1-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 29990
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-exterior-1-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 64440
+      }
+    }
+  },
+  "img/garibaldi/exterior-2.jpg": {
+    "name": "garibaldi-exterior-2",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-exterior-2-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 24328
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-exterior-2-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 46718
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-exterior-2-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 94882
+      }
+    }
+  },
+  "img/garibaldi/living-cocina.jpg": {
+    "name": "garibaldi-living-cocina",
+    "orig_w": 1672,
+    "orig_h": 941,
+    "sizes": {
+      "640": {
+        "path": "img/opt/garibaldi-living-cocina-640w.webp",
+        "w": 640,
+        "h": 360,
+        "size": 23344
+      },
+      "1024": {
+        "path": "img/opt/garibaldi-living-cocina-1024w.webp",
+        "w": 1024,
+        "h": 576,
+        "size": 50836
+      },
+      "1920": {
+        "path": "img/opt/garibaldi-living-cocina-1920w.webp",
+        "w": 1672,
+        "h": 941,
+        "size": 101774
+      }
+    }
+  },
+  "img/higo/exterior-1.jpg": {
+    "name": "higo-fachada",
+    "orig_w": 1485,
+    "orig_h": 1059,
+    "sizes": {
+      "640": {
+        "path": "img/opt/higo-fachada-640w.webp",
+        "w": 640,
+        "h": 456,
+        "size": 37630
+      },
+      "1024": {
+        "path": "img/opt/higo-fachada-1024w.webp",
+        "w": 1024,
+        "h": 730,
+        "size": 81046
+      },
+      "1920": {
+        "path": "img/opt/higo-fachada-1920w.webp",
+        "w": 1485,
+        "h": 1059,
+        "size": 136360
+      }
+    }
+  },
+  "img/higo/exterior-2.jpg": {
+    "name": "higo-exterior",
+    "orig_w": 1381,
+    "orig_h": 1139,
+    "sizes": {
+      "640": {
+        "path": "img/opt/higo-exterior-640w.webp",
+        "w": 640,
+        "h": 527,
+        "size": 50194
+      },
+      "1024": {
+        "path": "img/opt/higo-exterior-1024w.webp",
+        "w": 1024,
+        "h": 844,
+        "size": 108746
+      },
+      "1920": {
+        "path": "img/opt/higo-exterior-1920w.webp",
+        "w": 1381,
+        "h": 1139,
+        "size": 163624
+      }
+    }
+  },
+  "img/higo/interior-1.jpg": {
+    "name": "higo-interior",
+    "orig_w": 1465,
+    "orig_h": 1074,
+    "sizes": {
+      "640": {
+        "path": "img/opt/higo-interior-640w.webp",
+        "w": 640,
+        "h": 469,
+        "size": 52550
+      },
+      "1024": {
+        "path": "img/opt/higo-interior-1024w.webp",
+        "w": 1024,
+        "h": 750,
+        "size": 118444
+      },
+      "1920": {
+        "path": "img/opt/higo-interior-1920w.webp",
+        "w": 1465,
+        "h": 1074,
+        "size": 194688
+      }
+    }
+  },
+  "img/quincho/exterior-2.jpg": {
+    "name": "quincho-exterior-dia",
+    "orig_w": 1268,
+    "orig_h": 1241,
+    "sizes": {
+      "640": {
+        "path": "img/opt/quincho-exterior-dia-640w.webp",
+        "w": 640,
+        "h": 626,
+        "size": 65012
+      },
+      "1024": {
+        "path": "img/opt/quincho-exterior-dia-1024w.webp",
+        "w": 1024,
+        "h": 1002,
+        "size": 144032
+      },
+      "1920": {
+        "path": "img/opt/quincho-exterior-dia-1920w.webp",
+        "w": 1268,
+        "h": 1241,
+        "size": 187076
+      }
+    }
+  },
+  "img/quincho/exterior.jpg": {
+    "name": "quincho-exterior-noche",
+    "orig_w": 1268,
+    "orig_h": 1241,
+    "sizes": {
+      "640": {
+        "path": "img/opt/quincho-exterior-noche-640w.webp",
+        "w": 640,
+        "h": 626,
+        "size": 65012
+      },
+      "1024": {
+        "path": "img/opt/quincho-exterior-noche-1024w.webp",
+        "w": 1024,
+        "h": 1002,
+        "size": 144032
+      },
+      "1920": {
+        "path": "img/opt/quincho-exterior-noche-1920w.webp",
+        "w": 1268,
+        "h": 1241,
+        "size": 187076
+      }
+    }
+  },
+  "img/quincho/galeria.jpg": {
+    "name": "quincho-galeria",
+    "orig_w": 1254,
+    "orig_h": 1254,
+    "sizes": {
+      "640": {
+        "path": "img/opt/quincho-galeria-640w.webp",
+        "w": 640,
+        "h": 640,
+        "size": 49962
+      },
+      "1024": {
+        "path": "img/opt/quincho-galeria-1024w.webp",
+        "w": 1024,
+        "h": 1024,
+        "size": 115946
+      },
+      "1920": {
+        "path": "img/opt/quincho-galeria-1920w.webp",
+        "w": 1254,
+        "h": 1254,
+        "size": 152342
+      }
+    }
+  },
+  "img/quincho/living.jpg": {
+    "name": "quincho-living",
+    "orig_w": 1254,
+    "orig_h": 1254,
+    "sizes": {
+      "640": {
+        "path": "img/opt/quincho-living-640w.webp",
+        "w": 640,
+        "h": 640,
+        "size": 39532
+      },
+      "1024": {
+        "path": "img/opt/quincho-living-1024w.webp",
+        "w": 1024,
+        "h": 1024,
+        "size": 80722
+      },
+      "1920": {
+        "path": "img/opt/quincho-living-1920w.webp",
+        "w": 1254,
+        "h": 1254,
+        "size": 105676
+      }
+    }
+  },
+  "img/quincho/cocina.jpg": {
+    "name": "quincho-cocina",
+    "orig_w": 1265,
+    "orig_h": 1244,
+    "sizes": {
+      "640": {
+        "path": "img/opt/quincho-cocina-640w.webp",
+        "w": 640,
+        "h": 629,
+        "size": 29382
+      },
+      "1024": {
+        "path": "img/opt/quincho-cocina-1024w.webp",
+        "w": 1024,
+        "h": 1007,
+        "size": 60514
+      },
+      "1920": {
+        "path": "img/opt/quincho-cocina-1920w.webp",
+        "w": 1265,
+        "h": 1244,
+        "size": 81758
+      }
+    }
+  },
+  "img/remodelacion/1.jpg": {
+    "name": "remodelacion-salon",
+    "orig_w": 1254,
+    "orig_h": 1254,
+    "sizes": {
+      "640": {
+        "path": "img/opt/remodelacion-salon-640w.webp",
+        "w": 640,
+        "h": 640,
+        "size": 55404
+      },
+      "1024": {
+        "path": "img/opt/remodelacion-salon-1024w.webp",
+        "w": 1024,
+        "h": 1024,
+        "size": 139000
+      },
+      "1920": {
+        "path": "img/opt/remodelacion-salon-1920w.webp",
+        "w": 1254,
+        "h": 1254,
+        "size": 187966
+      }
+    }
+  },
+  "img/remodelacion/2.jpg": {
+    "name": "remodelacion-cocina",
+    "orig_w": 1254,
+    "orig_h": 1254,
+    "sizes": {
+      "640": {
+        "path": "img/opt/remodelacion-cocina-640w.webp",
+        "w": 640,
+        "h": 640,
+        "size": 23450
+      },
+      "1024": {
+        "path": "img/opt/remodelacion-cocina-1024w.webp",
+        "w": 1024,
+        "h": 1024,
+        "size": 51144
+      },
+      "1920": {
+        "path": "img/opt/remodelacion-cocina-1920w.webp",
+        "w": 1254,
+        "h": 1254,
+        "size": 69882
+      }
+    }
+  },
+  "img/remodelacion/3.jpg": {
+    "name": "remodelacion-bano",
+    "orig_w": 1268,
+    "orig_h": 1241,
+    "sizes": {
+      "640": {
+        "path": "img/opt/remodelacion-bano-640w.webp",
+        "w": 640,
+        "h": 626,
+        "size": 20642
+      },
+      "1024": {
+        "path": "img/opt/remodelacion-bano-1024w.webp",
+        "w": 1024,
+        "h": 1002,
+        "size": 42598
+      },
+      "1920": {
+        "path": "img/opt/remodelacion-bano-1920w.webp",
+        "w": 1268,
+        "h": 1241,
+        "size": 58852
+      }
+    }
+  },
+  "img/remodelacion/4.jpg": {
+    "name": "remodelacion-detalle",
+    "orig_w": 1254,
+    "orig_h": 1254,
+    "sizes": {
+      "640": {
+        "path": "img/opt/remodelacion-detalle-640w.webp",
+        "w": 640,
+        "h": 640,
+        "size": 27852
+      },
+      "1024": {
+        "path": "img/opt/remodelacion-detalle-1024w.webp",
+        "w": 1024,
+        "h": 1024,
+        "size": 61388
+      },
+      "1920": {
+        "path": "img/opt/remodelacion-detalle-1920w.webp",
+        "w": 1254,
+        "h": 1254,
+        "size": 84350
+      }
+    }
+  },
+  "img/cocina-metodo.jpg": {
+    "name": "cocina-metodo",
+    "orig_w": 1254,
+    "orig_h": 1254,
+    "sizes": {
+      "640": {
+        "path": "img/opt/cocina-metodo-640w.webp",
+        "w": 640,
+        "h": 640,
+        "size": 27852
+      },
+      "1024": {
+        "path": "img/opt/cocina-metodo-1024w.webp",
+        "w": 1024,
+        "h": 1024,
+        "size": 61388
+      },
+      "1920": {
+        "path": "img/opt/cocina-metodo-1920w.webp",
+        "w": 1254,
+        "h": 1254,
+        "size": 84350
+      }
+    }
+  },
+  "img/hero.webp": {
+    "name": "hero-calihue",
+    "orig_w": 1873,
+    "orig_h": 840,
+    "sizes": {
+      "640": {
+        "path": "img/opt/hero-calihue-640w.webp",
+        "w": 640,
+        "h": 287,
+        "size": 50958
+      },
+      "1024": {
+        "path": "img/opt/hero-calihue-1024w.webp",
+        "w": 1024,
+        "h": 459,
+        "size": 117466
+      },
+      "1920": {
+        "path": "img/opt/hero-calihue-1920w.webp",
+        "w": 1873,
+        "h": 840,
+        "size": 306252
+      }
+    }
+  },
+  "paimun-oficina.jpg": {
+    "name": "paimun-oficina",
+    "orig_w": 1083,
+    "orig_h": 1453,
+    "sizes": {
+      "640": {
+        "path": "img/opt/paimun-oficina-640w.webp",
+        "w": 640,
+        "h": 858,
+        "size": 19426
+      },
+      "1024": {
+        "path": "img/opt/paimun-oficina-1024w.webp",
+        "w": 1024,
+        "h": 1373,
+        "size": 37232
+      },
+      "1920": {
+        "path": "img/opt/paimun-oficina-1920w.webp",
+        "w": 1083,
+        "h": 1453,
+        "size": 42046
+      }
+    }
+  }
+}
