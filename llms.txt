@@ -1,6 +1,6 @@
 # Paimún Construcciones
 
-> Constructora llave en mano con base en Cañada de Gómez, Santa Fe, Argentina. Gestionamos proyectos de vivienda, remodelaciones integrales y quinchos de principio a fin en Cañada de Gómez, Armstrong y Villa la Angostura.
+> Constructora llave en mano con base en Cañada de Gómez, Santa Fe, Argentina. Gestionamos proyectos de vivienda, remodelaciones integrales y quinchos de principio a fin en Cañada de Gómez, Armstrong y Villa la Angostura. Fundada en 2020, trabajamos con construcción tradicional y steel frame.
 
 ## Servicios
 
@@ -22,10 +22,11 @@
 - Horarios: lunes a viernes 09:00–12:00 y 15:00–19:00
 - Instagram: https://instagram.com/paimun.ok
 
-## Secciones del sitio
+## Páginas del sitio
 
-- [Inicio](https://www.construccionespaimun.ar/)
-- [Proyectos](https://www.construccionespaimun.ar/#proyectos)
-- [Proceso](https://www.construccionespaimun.ar/#proceso)
-- [Contacto](https://www.construccionespaimun.ar/#contacto)
-- [Política de Privacidad](https://www.construccionespaimun.ar/privacidad.html)
+- [Inicio](https://www.construccionespaimun.ar/): Página principal con presentación de la empresa, método de trabajo y llamada a contacto.
+- [Proyectos](https://www.construccionespaimun.ar/#proyectos): Portafolio de obras entregadas y proyectos en desarrollo con galería de fotos.
+- [Proceso de trabajo](https://www.construccionespaimun.ar/#proceso): Las tres etapas del servicio llave en mano: planificación, ejecución y entrega.
+- [Contacto](https://www.construccionespaimun.ar/#contacto): Sección para agendar una reunión gratuita vía WhatsApp.
+- [Preguntas Frecuentes](https://www.construccionespaimun.ar/preguntas-frecuentes.html): Respuestas a las 9 dudas más comunes antes de construir: plazos, sistemas constructivos, presupuesto, garantía y más.
+- [Política de Privacidad](https://www.construccionespaimun.ar/privacidad.html): Tratamiento de datos conforme a la Ley 25.326 de Argentina.
