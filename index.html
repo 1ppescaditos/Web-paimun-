@@ -170,7 +170,7 @@ Solicitar Dossier Técnico
 <div class="flex items-center justify-between gap-4 p-2 bg-white/40 backdrop-blur-20px glass-border rounded-full shadow-primary/10 transition-all duration-700 hover:shadow-primary/20 magnetic py-2">
 <div class="flex items-center gap-8 pl-6">
 <a class="flex items-center transition-transform hover:scale-105" href="#hero">
-<img alt="Paimún Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSC4qDhZ6eHEC-bp1BTPq4DhAdodf5yA55NVp2wM6XWIgGhrMECjIn_EsriuH1S5UYFl_GOu13KbfE7tasq4mr-aKFj2pv7lE2WP1UjoIHnnXNxuHtqNWMYdDgEO4X8LH0G_EW74wAOtZuDD-7Xdoke10xaYR8sJx05xTbAHIt_Sa_lbzW6xedProUh1qLbIom5kKFH1u9pHjGjeV07DQaCeGXTv9Mbe317dXNY_ztKOUEI7Ukwx2Gha9_8bjPd_eeDLfK5YzQs4">
+<img alt="Paimún Logo" class="h-10 w-auto object-contain" src="img/logo.png">
 </a>
 <div class="hidden sm:flex gap-6 items-center border-l border-primary/10 pl-8">
 <a class="font-label text-[10px] uppercase tracking-widest text-primary hover:text-secondary transition-all" href="#nosotros">Nosotros</a>
@@ -188,7 +188,7 @@ Consultar
 
 <section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="hero">
 <div class="absolute inset-0 z-0" id="hero-bg">
-<img alt="Hero Architectural View" class="w-full h-full object-cover brightness-[0.85] scale-110 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCgcouK77QV-vyRIyblLH7G9iCCdYTvpnWtdqxMrWWORDtsihjBJ0ncN7EsQCEsW5rF4ldd5_Cf5dDk6RK4WZhlSCD-y-srLUkOcn01uusUVsCKq8Qg1VcAeSJtBuUa065kDRziDBfWykn4lo9XkYeF9igWzoX9cYh4BKWDm8RQrkaIwX1vcztyvl5zQJ2_46sr5vCgD4_cuhXorAiPMDI4ZSYe_GlXBjKHz8jmHiCnLguUChooNvh00WFHZK_2r8lCLR-prAisPA">
+<img alt="Casas Calihue - Proyecto Paimún Construcciones" class="w-full h-full object-cover brightness-[0.85] scale-110 transition-transform duration-[2000ms]" src="img/hero.webp">
 <div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 items-center">
@@ -256,7 +256,7 @@ Explorar Proyectos
 <section class="relative py-16 md:py-32 overflow-hidden" id="metodo">
 <!-- Background image -->
 <div class="absolute inset-0 z-0">
-<img alt="Arquitectura moderna" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80">
+<img alt="Cocina moderna - Paimún Construcciones" class="w-full h-full object-cover" src="img/cocina-metodo.jpg">
 <div class="absolute inset-0 bg-primary/80 backdrop-blur-sm"></div>
 </div>
 
@@ -930,11 +930,7 @@ function openProjectModal(title, category, mainImage, galleryData, description, 
     if (galleryData) {
         try { imgs = JSON.parse(galleryData); } catch(e) { imgs = []; }
     } else {
-        imgs = [
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-        ];
+        imgs = [];
     }
     var allThumbs = [mainImage].concat(imgs);
     window._modalThumbs = allThumbs;
