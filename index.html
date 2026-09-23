@@ -830,7 +830,7 @@ function renderModalGallery() {
     var html = '';
     for (var i = 0; i < thumbs.length; i++) {
         if (i === currentIdx) continue;
-        html += '<div class="aspect-square rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300" style="will-change:transform;" data-idx="' + i + '" onmousedown="this.style.transform=\'scale(1.05)\'" onmouseup="this.style.transform=\'scale(1)\'" onmouseleave="this.style.transform=\'scale(1)\'"><img src="' + thumbs[i] + '" class="w-full h-full object-cover"></div>';
+        html += '<div class="aspect-square rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300" style="will-change:transform;" data-idx="' + i + '" onmousedown="this.style.transform=\'scale(1.05)\'" onmouseup="this.style.transform=\'scale(1)\'" onmouseleave="this.style.transform=\'scale(1)\'"><img src="' + thumbs[i] + '" alt="Foto ' + (i + 1) + ' del proyecto" width="1024" height="576" class="w-full h-full object-cover"></div>';
     }
     galleryEl.innerHTML = html;
     galleryEl.querySelectorAll('div[data-idx]').forEach(function(div) {
@@ -845,6 +845,7 @@ function renderModalGallery() {
     });
 }
 var showcaseImages = ['img/opt/garibaldi-fachada-1024w.webp','img/opt/garibaldi-lateral-1024w.webp','img/opt/garibaldi-interior-1024w.webp','img/opt/garibaldi-living-1024w.webp','img/opt/garibaldi-cocina-1024w.webp','img/opt/garibaldi-dormitorio-1024w.webp'];
+var showcaseAlts = ['Fachada de Garibaldi Haus, dúplex contemporáneo','Vista lateral de Garibaldi Haus','Interior de Garibaldi Haus con doble altura','Living de Garibaldi Haus con iluminación natural','Cocina integrada de Garibaldi Haus','Dormitorio principal de Garibaldi Haus'];
 var showcaseIdx = 0;
 function renderShowcase() {
     var track = document.getElementById('showcase-track');
@@ -884,14 +885,14 @@ function renderShowcase() {
         var isCenter = p === centerIdx;
         if (isCenter) {
             html += '<div onclick="openGaribaldiModal()" style="flex:0 0 '+s.w+'px; height:'+s.h+'px; border-radius:'+s.r+'px; overflow:hidden; cursor:pointer; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.35); transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);" onmouseenter="this.style.transform=\'scale(1.02)\'" onmouseleave="this.style.transform=\'scale(1)\'">';
-            html += '<img src="'+showcaseImages[imgIdx]+'" class="w-full h-full object-cover" loading="lazy" decoding="async">';
+            html += '<img src="'+showcaseImages[imgIdx]+'" alt="'+showcaseAlts[imgIdx]+'" width="1024" height="576" class="w-full h-full object-cover" loading="lazy" decoding="async">';
             html += '<div class="carousel-card-glass" style="opacity:1; background:linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 55%, transparent 100%);">';
             html += '<h3 class="font-display text-2xl text-white" style="text-shadow:0 2px 10px rgba(0,0,0,0.8); font-weight:700;">Garibaldi Haus</h3>';
             html += '<p class="font-body text-sm text-white/80 mt-2" style="text-shadow:0 1px 8px rgba(0,0,0,0.7);">Dúplex contemporáneo con identidad propia.</p>';
             html += '</div></div>';
         } else {
             html += '<div onclick="openGaribaldiModal()" style="flex:0 0 '+s.w+'px; height:'+s.h+'px; border-radius:'+s.r+'px; overflow:hidden; cursor:pointer; opacity:'+s.op+'; transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);">';
-            html += '<img src="'+showcaseImages[imgIdx]+'" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" decoding="async">';
+            html += '<img src="'+showcaseImages[imgIdx]+'" alt="'+showcaseAlts[imgIdx]+'" width="1024" height="576" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" decoding="async">';
             html += '</div>';
         }
     }
@@ -965,12 +966,14 @@ document.addEventListener('keydown', function(e) {
     var btnStyle = 'position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:28px;width:48px;height:48px;border-radius:50%;cursor:pointer;backdrop-filter:blur(8px);transition:background 0.3s;display:flex;align-items:center;justify-content:center;';
     var btnPrev = document.createElement('button');
     btnPrev.innerHTML = '&#10094;';
+    btnPrev.setAttribute('aria-label', 'Foto anterior');
     btnPrev.style.cssText = btnStyle + 'left:20px;';
     btnPrev.onmouseenter = function() { this.style.background='rgba(255,255,255,0.3)'; };
     btnPrev.onmouseleave = function() { this.style.background='rgba(255,255,255,0.15)'; };
     btnPrev.onclick = function(e) { e.stopPropagation(); zoomNav(-1); };
     var btnNext = document.createElement('button');
     btnNext.innerHTML = '&#10095;';
+    btnNext.setAttribute('aria-label', 'Foto siguiente');
     btnNext.style.cssText = btnStyle + 'right:20px;';
     btnNext.onmouseenter = function() { this.style.background='rgba(255,255,255,0.3)'; };
     btnNext.onmouseleave = function() { this.style.background='rgba(255,255,255,0.15)'; };
