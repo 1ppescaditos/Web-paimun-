@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npx tailwindcss@3 -c tailwind.config.cli.js -i src/input.css -o dist/tailwind.min.css --minify",
+  "outputDirectory": ".",
   "redirects": [
     {
       "source": "/:path*",

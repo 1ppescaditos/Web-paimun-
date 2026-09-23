@@ -1,0 +1,22 @@
+{
+  "name": "calude-x-anti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "npx tailwindcss@3 -c tailwind.config.cli.js -i src/input.css -o dist/tailwind.min.css --minify",
+    "dev": "npx tailwindcss@3 -c tailwind.config.cli.js -i src/input.css -o dist/tailwind.min.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ppescaditos/Web-paimun-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/1ppescaditos/Web-paimun-/issues"
+  },
+  "homepage": "https://github.com/1ppescaditos/Web-paimun-#readme"
+}
