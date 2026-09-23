@@ -8,4 +8,6 @@
 - **Horarios:** Lunes a viernes de 09:00 a 12:00 y de 15:00 a 19:00
 - **Año de fundación:** 2020
 - **WhatsApp:** +54 3471 537155
+- **Email:** construccionespaimun@gmail.com
+- **Código postal:** 2500
 - **Redes sociales:** Instagram (quitar Facebook y LinkedIn)
