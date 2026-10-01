@@ -186,7 +186,10 @@ Consultar
 
 <section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="hero">
 <div class="absolute inset-0 z-0" id="hero-bg">
-<img alt="Casas Calihue - Proyecto Paimún Construcciones en Villa la Angostura" class="w-full h-full object-cover brightness-[0.85] scale-110 transition-transform duration-[2000ms]" src="img/opt/hero-calihue-1920w.webp" srcset="img/opt/hero-calihue-640w.webp 640w, img/opt/hero-calihue-1024w.webp 1024w, img/opt/hero-calihue-1920w.webp 1920w" sizes="100vw" width="1873" height="840" fetchpriority="high">
+<img alt="Casas Calihue - Proyecto Paimún Construcciones en Villa la Angostura" class="w-full h-full object-cover brightness-[0.85] scale-110 transition-transform duration-[2000ms]" src="img/opt/hero-calihue-1920w.webp" srcset="img/opt/hero-calihue-640w.webp 640w, img/opt/hero-calihue-1024w.webp 1024w, img/opt/hero-calihue-1920w.webp 1920w" sizes="100vw" width="1873" height="840" fetchpriority="high" id="hero-img">
+<video class="hidden md:block absolute inset-0 w-full h-full object-cover brightness-[0.85] scale-110" autoplay muted loop playsinline preload="metadata" poster="img/opt/hero-calihue-1920w.webp" id="hero-video" aria-hidden="true">
+<source src="img/opt/hero-timelapse.mp4" type="video/mp4">
+</video>
 <div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 items-center">
@@ -483,6 +486,15 @@ const revealObserver = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+// Hero video: hide static image once video plays (desktop only)
+var heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+    heroVideo.addEventListener('playing', function() {
+        var img = document.getElementById('hero-img');
+        if (img) img.style.opacity = '0';
+    }, { once: true });
+}
 
 // Magnetic
 document.querySelectorAll('.magnetic').forEach(function(el) {
